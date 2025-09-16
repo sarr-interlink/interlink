@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { getMembers } from "../_lib/data-services";
+import { useFetchList } from "../_lib/useFetch";
 import amnirdigitalplatefom from "@/public/assets/img/amnir_digital_platefom.png";
 import {
   Autoplay,
@@ -18,25 +17,7 @@ import Image from "next/image";
 import { STRAPI_URL } from "../_lib/utils";
 
 function Products() {
-  const [members, setMembers] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    async function fetchMembers() {
-      try {
-        const data = await getMembers();
-        setMembers(data);
-      } catch (err) {
-        console.error("Error fetching members:", err);
-        setError("Failed to load members.");
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchMembers();
-  }, []);
+  const { data: members, loading, error } = useFetchList("Products");
 
   // if (loading) {
   //   return <p>Loading...</p>;

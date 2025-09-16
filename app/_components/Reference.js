@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useFetchList } from "../_lib/useFetch";
 import {
   Autoplay,
   Navigation,
@@ -14,29 +14,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
-import { getReferences } from "../_lib/data-services";
 import { STRAPI_URL } from "../_lib/utils";
 
 function Reference() {
-  const [references, setReferences] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    async function fetchReference() {
-      try {
-        const data = await getReferences();
-        setReferences(data);
-      } catch (err) {
-        console.error("Error fetching members:", err);
-        setError("Failed to load members.");
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchReference();
-  }, []);
+  const { data: references, loading, error } = useFetchList("References");
 
   const referencesData =
     references && Array.isArray(references.data) ? references.data : [];

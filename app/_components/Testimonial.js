@@ -1,7 +1,7 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
-import { getTestimonials } from "../_lib/data-services";
+import { useFetchList } from "../_lib/useFetch";
 import {
   Carousel,
   CarouselContent,
@@ -13,25 +13,7 @@ import { Card as Cards, CardContent as CardContents } from "./ui/card"; // Renom
 import { STRAPI_URL } from "../_lib/utils";
 
 function Testimonial() {
-  const [testimonials, setTestimonials] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    async function fetTestimonials() {
-      try {
-        const data = await getTestimonials();
-        setTestimonials(data);
-      } catch (err) {
-        console.error("Error fetching setTestimonials:", err);
-        setError("Failed to load setTestimonials.");
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetTestimonials();
-  }, []);
+  const { data: testimonials, loading, error } = useFetchList("Testimonials");
   const testimonialData =
     testimonials && Array.isArray(testimonials.data) ? testimonials.data : [];
 
