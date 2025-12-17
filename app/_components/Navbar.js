@@ -83,7 +83,7 @@ function Navbar() {
               <ul className="navbar-nav mr-auto justify-center items-center lg:flex">
                 <li className="nav-item">
                   <Link className="page-scroll active" href="#hero-area">
-                    Accueil
+                    AccueilEd Done
                   </Link>
                 </li>
                 <li className="nav-item">

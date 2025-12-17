@@ -30,24 +30,24 @@ export const menuItems = [
     label: "Nos Offres",
     href: "/pricing",
     items: [
-      {
-        title: "Accessibilité et Mobilité",
-        href: "/pricing",
-        description:
-          "L'offre SaaS permet un accès instantané aux services depuis n'importe quel endroit, favorisant la mobilité des utilisateurs et garantissant une disponibilité universelle.",
-      },
-      {
-        title: "Simplicité Opérationnelle",
-        href: "/pricing",
-        description:
-          "Élimination des complexités liées à l'installation et à la maintenance locales, avec des mises à jour automatiques qui simplifient la gestion quotidienne.",
-      },
-      {
-        title: "Économies de Coûts et Évolutivité ",
-        href: "/pricing",
-        description:
-          " Réduction des coûts d'infrastructure initiaux, avec la capacité d'ajuster les ressources en fonction des besoins pour une solution économique et évolutive.",
-      },
+      // {
+      //   title: "Accessibilité et Mobilité",
+      //   href: "/pricing",
+      //   description:
+      //     "L'offre SaaS permet un accès instantané aux services depuis n'importe quel endroit, favorisant la mobilité des utilisateurs et garantissant une disponibilité universelle.",
+      // },
+      // {
+      //   title: "Simplicité Opérationnelle",
+      //   href: "/pricing",
+      //   description:
+      //     "Élimination des complexités liées à l'installation et à la maintenance locales, avec des mises à jour automatiques qui simplifient la gestion quotidienne.",
+      // },
+      // {
+      //   title: "Économies de Coûts et Évolutivité ",
+      //   href: "/pricing",
+      //   description:
+      //     " Réduction des coûts d'infrastructure initiaux, avec la capacité d'ajuster les ressources en fonction des besoins pour une solution économique et évolutive.",
+      // },
     ],
   },
   {
@@ -144,7 +144,8 @@ const ListItem = React.forwardRef(function ListItem(
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            // "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors focus:bg-accent focus:text-accent-foreground",
             className
           )}
           {...props}
