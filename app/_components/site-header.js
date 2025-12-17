@@ -1,7 +1,7 @@
 import { MainNav } from "./main-nav";
 import { MobileNav } from "./mobile-nav";
 import Image from "next/image";
-import newlogoInterlink from "/public/4.svg";
+import newlogoInterlink from "@/public/4.svg";
 
 export function SiteHeader() {
   return (

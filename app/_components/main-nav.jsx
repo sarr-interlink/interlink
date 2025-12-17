@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import React from "react";
 import { cn } from "../_lib/utils";
 import Image from "next/image";
-import newlogoInterlink from "/public/4.svg";
+import newlogoInterlink from "@/public/4.svg";
 import {
   NavigationMenu,
   NavigationMenuContent,

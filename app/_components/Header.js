@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import robot2 from "/public/robot2.webp";
+import robot2 from "@/public/robot2.webp";
 import { useEffect } from "react";
 import AOS from "aos";
 

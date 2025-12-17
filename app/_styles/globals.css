@@ -1,3 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap");
+
+@import "swiper/css";
+@import "swiper/css/navigation"; /* Optional if you use navigation */
+@import "swiper/css/pagination"; /* Optional if you use pagination */
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -46,13 +55,6 @@
 /* @import "swiper/swiper-bundle.min.css"; */
 /* Import Swiper styles */
 /* styles/globals.css */
-@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap");
-
-@import "swiper/css";
-@import "swiper/css/navigation"; /* Optional if you use navigation */
-@import "swiper/css/pagination"; /* Optional if you use pagination */
 
 /*  */
 p {
