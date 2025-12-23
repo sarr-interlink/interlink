@@ -30,6 +30,7 @@ DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName
 const DrawerContent = React.forwardRef(({ className, children, ...props }, ref) => (
   <DrawerPortal>
     <DrawerOverlay />
+    
     <DrawerPrimitive.Content
       ref={ref}
       className={cn(
@@ -40,6 +41,7 @@ const DrawerContent = React.forwardRef(({ className, children, ...props }, ref) 
       <div
         className="mx-auto mt-4 h-2 w-[100px] rounded-full bg-zinc-100 dark:bg-zinc-800" />
       {children}
+      <DrawerPrimitive.Title className="sr-only">Navigation Menu</DrawerPrimitive.Title>
     </DrawerPrimitive.Content>
   </DrawerPortal>
 ))

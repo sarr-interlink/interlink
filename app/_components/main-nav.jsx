@@ -76,7 +76,7 @@ export function MainNav() {
   const pathname = usePathname();
 
   return (
-    <div className="mr-4 hidden md:flex">
+    <div className="mr-4 md:flex">
       <Link href="/" className="mr-4 flex items-center gap-2 lg:mr-6">
         <Image
           src={newlogoInterlink}
@@ -115,19 +115,14 @@ export function MainNav() {
                 </NavigationMenuItem>
               ) : (
                 <NavigationMenuItem key={index}>
-                  <Link href={item.href}>
-                    {/* @next-codemod-error This Link previously used the now removed `legacyBehavior` prop, and has a child that might not be an anchor. The codemod bailed out of lifting the child props to the Link. Check that the child component does not render an anchor, and potentially move the props manually to Link. */
-                    }
-                    <NavigationMenuLink
+                    <NavigationMenuLink href={item.href}
                       className={cn(
                         pathname === item.href && "text-accent-hover",
-                        navigationMenuTriggerStyle()
-                      )}
-                    >
+                        navigationMenuTriggerStyle())}>
                       {item.label}
                     </NavigationMenuLink>
-                  </Link>
                 </NavigationMenuItem>
+                
               )
             )}
           </NavigationMenuList>
