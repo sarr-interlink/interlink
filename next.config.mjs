@@ -4,6 +4,7 @@ const nextConfig = {
   // optimizeCss: false,
   // enableBabelRuntime: true,
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
@@ -12,6 +13,7 @@ const nextConfig = {
       {
         protocol: "http",
         hostname: "localhost",
+        port: "1337",
       },
       {
         protocol: "http",

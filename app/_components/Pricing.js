@@ -36,6 +36,8 @@ async function Pricing() {
             {hebergementSaas.map((hebergement) => {
               const image = hebergement.attributes.image;
               const imageUrl = image?.data?.attributes?.url || "";
+              const pathImg = STRAPI_URL + imageUrl
+              
               return (
                 <div
                   key={hebergement.id}
@@ -44,7 +46,7 @@ async function Pricing() {
                   <div className="pricing-box !rounded-[20px]">
                     <div className="w-2/5 mx-auto text-center relative">
                       <Image
-                        src={STRAPI_URL + imageUrl}
+                        src={pathImg}
                         alt={hebergement.attributes.title}
                         className="object-cover"
                         width={200}
