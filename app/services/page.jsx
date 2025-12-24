@@ -1,4 +1,6 @@
+import { Link } from "lucide-react";
 import Services from "../_components/Services";
+import Image from "next/image";
 
 import {
   Card,
@@ -230,66 +232,96 @@ export default function Page() {
           </div>
         </div>
         <div className="flex flex-col">
-          <div className="flex items-center justify-between mb-4">
+          {/* <div className="flex items-center justify-between mb-4">
             <CardTitle className="text-black">Backend</CardTitle>
-          </div>
+          </div> */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-[16px]">
-            <a className="flex rounded-[16px] border-primary border h-[97px]  justify-center items-center relative">
-              <picture>
+            <picture className="flex rounded-[16px] border-primary border h-[97px]  justify-center items-center relative">
+                <Image 
+                  width={'100'}
+                  height={'100'}
+                  src="http://localhost:1337/uploads/react_native_e6b047e683.png"
+                  alt=""
+                ></Image>
+            </picture>
+
+            <picture className="flex rounded-[16px] border-primary border h-[97px]  justify-center items-center relative">
                 <img
-                  src="https://www.nomeo.fr/images/technologies/figma.png"
+                  src="http://localhost:1337/uploads/symfony_f79c2ffa2c.png"
                   alt=""
                 ></img>
               </picture>
-            </a>
-            <a className="flex rounded-[16px] border-primary border h-[97px]  justify-center items-center relative">
-              <picture>
-                <img
-                  src="https://www.nomeo.fr/images/technologies/figma.png"
+            <picture className="flex rounded-[16px] border-primary border h-[97px]  justify-center items-center relative">
+                <Image 
+                  width={'100'}
+                  height={'100'}
+                  src="http://localhost:1337/uploads/flutter_a8b74f56bb.png"
                   alt=""
-                ></img>
-              </picture>
-            </a>
-            <a className="flex rounded-[16px] border-primary border h-[97px]  justify-center items-center relative">
-              <picture>
-                <img
-                  src="https://www.nomeo.fr/images/technologies/figma.png"
+                ></Image>
+            </picture>
+            <picture className="flex rounded-[16px] border-primary border h-[97px]  justify-center items-center relative">
+                <Image 
+                  width={'75'}
+                  height={'100'}
+                  src="http://localhost:1337/uploads/docker_5d1df56bed.png"
                   alt=""
-                ></img>
-              </picture>
-            </a>
-            <a className="flex rounded-[16px] border-primary border h-[97px]  justify-center items-center relative">
-              <picture>
-                <img
-                  src="https://www.nomeo.fr/images/technologies/figma.png"
+                ></Image>
+            </picture>
+
+            <picture className="flex rounded-[16px] border-primary border h-[97px]  justify-center items-center relative">
+                <Image 
+                  width={'100'}
+                  height={'100'}
+                  src="http://localhost:1337/uploads/nodejs_2571d885bd.png"
                   alt=""
-                ></img>
-              </picture>
-            </a>
-            <a className="flex rounded-[16px] border-primary border h-[97px]  justify-center items-center relative">
-              <picture>
-                <img
-                  src="https://www.nomeo.fr/images/technologies/figma.png"
+                ></Image>
+            </picture>
+
+            <picture className="flex rounded-[16px] border-primary border h-[97px]  justify-center items-center relative">
+                <Image 
+                  width={'100'}
+                  height={'100'}
+                  src="http://localhost:1337/uploads/php_68c9307bce.png"
                   alt=""
-                ></img>
-              </picture>
-            </a>
-            <a className="flex rounded-[16px] border-primary border h-[97px]  justify-center items-center relative">
-              <picture>
-                <img
-                  src="https://www.nomeo.fr/images/technologies/figma.png"
+                ></Image>
+            </picture>
+
+            <picture className="flex rounded-[16px] border-primary border h-[97px]  justify-center items-center relative">
+                <Image 
+                  width={'70'}
+                  height={'100'}
+                  src="http://localhost:1337/uploads/typescript_a0d749f316.png"
                   alt=""
-                ></img>
-              </picture>
-            </a>
-            <a className="flex rounded-[16px] border-primary border h-[97px]  justify-center items-center relative">
-              <picture>
-                <img
-                  src="https://www.nomeo.fr/images/technologies/figma.png"
+                ></Image>
+            </picture>
+            
+            <picture className="flex rounded-[16px] border-primary border h-[97px]  justify-center items-center relative">
+                <Image 
+                  width={'140'}
+                  height={'100'}
+                  src="http://localhost:1337/uploads/firebase_logo_bd988f4a66.png"
                   alt=""
-                ></img>
-              </picture>
-            </a>
+                ></Image>
+            </picture>
+            
+            <picture className="flex rounded-[16px] border-primary border h-[97px]  justify-center items-center relative">
+                <Image 
+                  width={'100'}
+                  height={'100'}
+                  src="http://localhost:1337/uploads/next_js_logo_d378cb46ad.png"
+                  alt=""
+                ></Image>
+            </picture>
+
+            <picture className="flex rounded-[16px] border-primary border h-[97px]  justify-center items-center relative">
+                <Image 
+                  width={'180'}
+                  height={'100'}
+                  src="http://localhost:1337/uploads/spring-boot.png"
+                  alt=""
+                ></Image>
+            </picture>
+
           </div>
         </div>
       </Card>
