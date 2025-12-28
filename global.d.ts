@@ -1,4 +1,4 @@
-declare module "@/app/_styles/globals.css";
+declare module "@/app/global.css";
 declare module "@/public/assets/css/animate.css";
 declare module "@/public/assets/css/tailwind.css";
 declare module "lineicons/web-font/lineicons.css";

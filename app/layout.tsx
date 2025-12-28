@@ -1,4 +1,4 @@
-import "@/app/_styles/globals.css";
+import "@/app/global.css";
 import "@/public/assets/css/animate.css";
 import "@/public/assets/css/tailwind.css";
 import "lineicons/web-font/lineicons.css";

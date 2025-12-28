@@ -1,0 +1,3 @@
+
+"@nextui-org/react": "^2.4.6",
+"@nextui-org/tabs": "^2.0.35",

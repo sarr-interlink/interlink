@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Card, CardBody } from "@nextui-org/react";
+// import { Card } from  "@heroui/react" //"@nextui-org/react";
 import {
   Card as Cards,
   CardContent,
@@ -8,7 +8,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "./ui/card";
+} from "@/components/ui/card";
 
 function About({ Works }) {
   // tabs state
