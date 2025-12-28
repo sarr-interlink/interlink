@@ -33,7 +33,7 @@
     "**/*.mts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "app/not-found.jsx", "app/services/page.jsx"  ],
   "exclude": [
     "node_modules"
   ]

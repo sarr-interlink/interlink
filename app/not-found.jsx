@@ -18,9 +18,11 @@ function NotFound() {
         Go back home
       </Link>
       <HoverCard>
-        <HoverCardTrigger>Hover</HoverCardTrigger>
+        <HoverCardTrigger asChild>
+          <button>Hover</button>
+        </HoverCardTrigger>
         <HoverCardContent>
-          The React Framework – created and maintained by @vercel.
+          <p>The React Framework – created and maintained by @vercel.</p>
         </HoverCardContent>
       </HoverCard>
     </main>

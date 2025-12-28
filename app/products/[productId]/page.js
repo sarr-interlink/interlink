@@ -4,7 +4,8 @@ import Contact from "@/app/_components/Contact";
 import { getProductsByID } from "@/app/_lib/data-services";
 
 export default async function Page({ params }) {
-  const productData = await getProductsByID(params.productId);
+  const {productId} = await params
+  const productData = await getProductsByID(productId);
   const product = productData?.data.attributes;
 
   return (
@@ -38,7 +39,7 @@ export default async function Page({ params }) {
               <div className="relative">
                 <Image
                   className="w-[5%] absolute -top-[5px] -left-[31px]"
-                  src={`	https://cdn.prod.website-files.com/66473ce8664c48d3e42fec71/66473ce8664c48d3e42feca3_ping.svg`}
+                  src={"https://cdn.prod.website-files.com/66473ce8664c48d3e42fec71/66473ce8664c48d3e42feca3_ping.svg"}
                   alt={"lazy"}
                   width={50} // Specify appropriate width
                   height={50} // Specify appropriate height
