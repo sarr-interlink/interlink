@@ -7,7 +7,8 @@ import { formatDate } from "@/app/_utiles/formatDate";
 import { STRAPI_URL } from "@/app/_lib/utils";
 
 async function page({ params }) {
-  const articleData = await getArticle(params.articleId);
+  const { articleId } = await params
+  const articleData = await getArticle(articleId);
   const article = articleData.data;
   const imageUrl = article.attributes.image?.data?.attributes?.url || "";
   const fullImageUrl = `${STRAPI_URL}${imageUrl}`;

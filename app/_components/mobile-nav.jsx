@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
+import { Drawer, DrawerContent, DrawerTrigger } from "@/app/_components/ui/drawer";
 import { Button } from "./ui/button";
 import { cn } from "../_lib/utils";
 import { Menu } from "lucide-react";

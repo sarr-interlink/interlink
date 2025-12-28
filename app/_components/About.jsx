@@ -12,7 +12,7 @@ import {
 
 function About({ Works }) {
   // tabs state
-  const [activeTab, setActiveTab] = useState("engineering");
+  const [activeTab, setActiveTab] = useState<string>("engineering");
 
   const handleHover = (tabKey) => {
     setActiveTab(tabKey);

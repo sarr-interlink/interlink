@@ -1,8 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 
+interface Article {
+  id: number,
+  imageSrc: string,
+  title: string,
+  description: string
+  link: string
+}
+
 function ArticleCard() {
-  const articles = [
+  const articles: Article[] = [
     {
       id: 1,
       imageSrc:
@@ -103,7 +111,7 @@ function ArticleCard() {
         </div>
 
         <div className="-mx-4 flex flex-wrap">
-          {articles.map((article) => (
+          {articles.map((article: Article) => (
             <div key={article.id} className="w-full px-4 md:w-1/2 lg:w-1/3 ">
               <div className="mb-9 rounded-[20px] bg-transparent dark:bg-dark-2 hover:bg-accent p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10 transition-transform transform hover:scale-105">
                 <div className="flex flex-row justify-start items-center gap-6 mb-4">
