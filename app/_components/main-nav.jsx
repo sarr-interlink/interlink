@@ -14,7 +14,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
+} from "@/app/_components/ui/navigation-menu";
 export const menuItems = [
   {
     label: "Accueil",
