@@ -332,30 +332,31 @@ export default async function Page() {
         </div>
 
         <Tabs defaultValue={works[0]?.attributes?.title} className="w-full">
-          <TabsList className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-2 h-auto !bg-white shadow">
+          <TabsList className="px-16 mx-auto w-8xl bg-white gap-x-8 h-auto">
             {works.map((work) => (
               <TabsTrigger
                 key={work.id}
                 value={work.attributes.title}
-                className="p-6 data-[state=active]:bg-primary shadow"
+                className="p-6 bg-gray-200 data-[state=active]:bg-blue-950 data-[state=active]:text-white shadow min-h-25 px-5"
               >
-                <div className="flex flex-row justify-between items-center gap-2">
-                  <span className="flex justify-center items-center bg-white p-5 text-center rounded shadow align-middle">
+                <div className="flex flex-row justify-between items-center gap-x-3">
+                  <div className="bg-white p-2 rounded-lg">
                     <i
-                      className={`ri-heart-pulse-line text-[2.5rem] text-accent-hover`}
+                      className={`ri-heart-pulse-line text-blue-600 text-6xl`}
                     ></i>
-                  </span>
-                  <span className="flex-grow leading-5 text-md break-words">
+                  </div>
+                  <p className="text-lg font-bold text-wrap">
                     {work.attributes.title}
-                  </span>
+                  </p>
                 </div>
               </TabsTrigger>
             ))}
           </TabsList>
 
           {works.map((work) => (
-            <TabsContent key={work.id} value={work.attributes.title}>
-              <Card className="p-10 mb-3 relative !bg-white !dark:border-accent !border-transparent !text-black shadow">
+            <TabsContent key={work.id} value={work.attributes.title}
+            >
+              <Card className="px-64 mb-3 relative border-transparent! shadow">
                 <CardContent className="space-y-2">
                   {work.attributes.content.map((item, index) => {
                     if (item.type === "list") {
