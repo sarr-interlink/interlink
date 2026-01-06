@@ -1,0 +1,102 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import {
+  Autoplay,
+  Navigation,
+  Scrollbar,
+  A11y,
+  Pagination,
+} from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import Image from "next/image";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
+import { getReferences } from "@/src/app/_lib/data-services";
+import { STRAPI_URL } from "@/src/app/_lib/utils";
+import { ReferenceAttributeType, ReferenceType } from "../../_lib/types/ReferenceType";
+
+export function ReferenceDiv() {
+  const [references, setReferences] = useState<{data: ReferenceType[]}>({data:[]});
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string>("");
+
+  useEffect(() => {
+    async function fetchReference() {
+      try {
+        const data: {data: ReferenceType[]} = await getReferences();
+        setReferences(data);
+      } catch (err) {
+        console.error("Error fetching members:", err);
+        setError("Failed to load members.");
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchReference();
+  }, []);
+
+  const referencesData =
+    references && Array.isArray(references.data) ? references.data : [];
+  return (
+
+    <div className="my-10 bg-blue-200 pt-2">
+      
+        <h1 className="text-center text-5xl font-extrabold mt-8">
+          Références
+        </h1>
+
+        <Swiper
+          // install Swiper modules
+          modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+          slidesPerView={5}
+          spaceBetween={30}
+          centeredSlides={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          className="m-8 w-full" 
+        >
+          
+            {
+              referencesData.length > 0 &&
+                referencesData.map((reference: ReferenceType) => {
+                  const attributes: ReferenceAttributeType = reference.attributes || {};
+                  const logoUrl = attributes.logo?.data?.attributes?.url || "";
+
+                  return (
+                    <SwiperSlide key={reference.id} className="p-32 flex flex-row items-center justify-center">
+                        <ReferenceSlide attributes={attributes} logoUrl={logoUrl}/>
+                    </SwiperSlide>
+                  );
+                })
+              
+            }
+        </Swiper>
+      </div>
+  );
+}
+
+
+const ReferenceSlide = ({attributes, logoUrl}: {attributes: ReferenceAttributeType, logoUrl: string}) => {
+    return (
+        <HoverCard>
+            <HoverCardTrigger>
+                <Image
+                width={100} // Specify the width of the image (used as a ratio)
+                height={10}
+                className="client-logo w-full h-auto"
+                src={`${STRAPI_URL}${logoUrl}`}
+                alt={attributes.Name || "Client logo"}
+                />
+            </HoverCardTrigger>
+            <HoverCardContent>
+                {attributes.Name || "Client logo"}
+            </HoverCardContent>
+        </HoverCard>
+    )
+}

@@ -1,10 +1,5 @@
-declare module "@/app/globals.css";
-declare module "@/public/assets/css/animate.css";
-declare module "@/public/assets/css/tailwind.css";
-declare module "lineicons/web-font/lineicons.css";
-declare module "lineicons/dist/lineicons.css";
-declare module "swiper/css";
-declare module "swiper/css/navigation";
-declare module "swiper/css/pagination";
-declare module "swiper/css/scrollbar";
-declare module "aos/dist/aos.css";
+declare module "*.css"
+declare module 'swiper/css';
+declare module 'swiper/css/navigation';
+declare module 'swiper/css/pagination';
+declare module 'swiper/css/scrollbar';
