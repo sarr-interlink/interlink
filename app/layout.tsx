@@ -1,7 +1,7 @@
-import "@/app/global.css";
+import "@/app/globals.css";
 import "@/public/assets/css/animate.css";
 import "@/public/assets/css/tailwind.css";
-import "lineicons/web-font/lineicons.css";
+import "lineicons/dist/lineicons.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -11,6 +11,7 @@ import Footer from "./_components/Footer";
 import { Inter, Sora } from "next/font/google";
 import { SiteHeader } from "./_components/site-header";
 import { Metadata } from "next";
+import { SHeader } from "./_components/d_components/Header/Header/Header";
 
 // Example of using a Google Font
 // const inter = Inter({ subsets: ["latin"], weight: "400" });
@@ -35,7 +36,7 @@ export default function RootLayout({ children }: {children: React.ReactNode})
         {/* Import des styles CSS */}
         <link
           rel="stylesheet"
-          href="https://cdn.lineicons.com/2.0/lineicons.css"
+          href="https://cdn.lineicons.com/4.0/lineicons.css"
         />
         <link
           rel="stylesheet"
@@ -55,7 +56,9 @@ export default function RootLayout({ children }: {children: React.ReactNode})
 
       <body className={sora.className}>
       
-        <SiteHeader />
+        
+        <SHeader />
+        {/* <SiteHeader /> */}
         <main>{children}</main>
         <Footer />
       

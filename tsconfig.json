@@ -33,7 +33,7 @@
     "**/*.mts",
     "**/*.ts",
     "**/*.tsx"
-, "app/not-found.jsx", "app/services/page.jsx", "app/_components/About.tsx", "app/_components/Reference.js"  ],
+, "app/not-found.tsx", "app/services/page.tsx", "app/_components/About.tsx", "app/_components/Reference.tsx"  ],
   "exclude": [
     "node_modules"
   ]

@@ -1,20 +1,13 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 // import { Card } from  "@heroui/react" //"@nextui-org/react";
-import {
-  Card as Cards,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card as Cards } from "@/components/ui/card";
 
 function About({ Works }) {
   // tabs state
   const [activeTab, setActiveTab] = useState<string>("engineering");
 
-  const handleHover = (tabKey) => {
+  const handleHover = (tabKey: string) => {
     setActiveTab(tabKey);
   };
 
