@@ -27,9 +27,9 @@ export default async function Pricing() {
     const hebergement: HebergementType = hebergementData?.data;
     const imageHebergement: HebergementAttributeImageType = hebergement.attributes.image;
     const imageHebergementUrl = imageHebergement?.data?.attributes?.url || "";
-    const HebergementSaasDesciptionData: {data: HSaasDescriptionType} = await getHebergementSaasDesciption();
-    const hebergementSaasData: {data: HSaas[]} = await getHebergementsSaas();
-    const hebergementSaas = hebergementSaasData?.data;
+    //const HebergementSaasDesciptionData: {data: HSaasDescriptionType} = await getHebergementSaasDesciption();
+    //const hebergementSaasData: {data: HSaas[]} = await getHebergementsSaas();
+    //const hebergementSaas = hebergementSaasData?.data;
     const HebergementLocaleDesciptionData: {data: HebergementLocalDesciptionType} = await getHebergementLocaleDesciption();
     const hebergementLocaleData: {data: HebergementLocalType[]} = await getHebergementsLocale();
     const hebergementLocale = hebergementLocaleData?.data;

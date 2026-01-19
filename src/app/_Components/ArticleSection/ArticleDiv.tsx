@@ -15,7 +15,7 @@ export function ArticleSection() {
             Nos dérniers articles
         </h1>   
 
-        <div className="pt-10 flex flex-row items-center justify-center gap-x-10">
+        <div className="pt-10 flex flex-row items-center justify-center flex-wrap gap-x-10 gap-y-10">
           {articles.map((article: Article) => {
             return <ArticleCard key={article.id} article={article} />
           })}

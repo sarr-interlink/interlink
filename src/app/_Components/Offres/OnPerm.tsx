@@ -1,8 +1,11 @@
+"use client"
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { HebergementLocalType } from "../../_lib/types/HebergementLocal";
 import { HebergementLocalDesciptionType } from "../../_lib/types/HebergementLocalDesc";
 import { STRAPI_URL } from "../../_lib/utils";
 import Image from "next/image";
+import LightPillar from "@/components/LightPillar";
 
 
 export const OnPerm = (
@@ -12,27 +15,37 @@ export const OnPerm = (
         hebergementLocale: HebergementLocalType[]
     }) => {
     return (
-      
-        <div className="py-10">
-            <h1 className="text-4xl font-semibold text-gray-800 text-center">
-              {HebergementLocaleDesciptionData.data.attributes.title}
-            </h1>
-            <p className="my-4 text-xl font-medium text-gray-600 max-w-3xl mx-auto text-center">
-              {HebergementLocaleDesciptionData.data.attributes.description}
-            </p>
-          
-          <div className="flex flex-row items-center justify-center gap-10 px-64">
-              {hebergementLocale.map((hebergement: HebergementLocalType) => {
-                const image = hebergement.attributes.image;
-                const imageUrl = image?.data?.attributes?.url || "";
-                const pathImg = STRAPI_URL + imageUrl
+        <div className="relative">
+            <LightPillar
+            topColor="#0000ff"
+            bottomColor="#ff0000"
+            rotationSpeed={1.2}
+            glowAmount={0.001}
+            pillarWidth={7.2}
+            pillarHeight={1.6}
+            pillarRotation={266}
+            />
 
-                return <OnPermCard key={hebergement.id} hebergement={hebergement} pathImg={pathImg}/>
-              })}
-          </div>
+            <div className="relative z-10 py-10">
+                <h1 className="text-4xl font-semibold text-white text-center">
+                {HebergementLocaleDesciptionData.data.attributes.title}
+                </h1>
+                <p className="my-4 text-xl font-medium text-white max-w-3xl mx-auto text-center">
+                {HebergementLocaleDesciptionData.data.attributes.description}
+                </p>
+            
+                <div className="flex flex-row items-center justify-center gap-10 px-64">
+                    {hebergementLocale.map((hebergement: HebergementLocalType) => {
+                        const image = hebergement.attributes.image;
+                        const imageUrl = image?.data?.attributes?.url || "";
+                        const pathImg = STRAPI_URL + imageUrl
 
-
+                        return <OnPermCard key={hebergement.id} hebergement={hebergement} pathImg={pathImg}/>
+                    })}
+                </div>
+            </div>
         </div>
+        
     )
 }
 

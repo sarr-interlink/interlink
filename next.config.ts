@@ -8,6 +8,15 @@ const nextConfig: NextConfig = {
     unoptimized: true,
     remotePatterns: [
       {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com',
+        pathname: '/devicons/devicon/master/**',
+      },
+      {
+        protocol: "http",
+        hostname: "spring.io"
+      },
+      {
         protocol: "https",
         hostname: "cms-interlink.onrender.com",
       },

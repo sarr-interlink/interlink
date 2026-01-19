@@ -43,8 +43,10 @@ export function ReferenceDiv() {
     references && Array.isArray(references.data) ? references.data : [];
   return (
 
-    <div className="my-10 bg-blue-200 pt-2">
-      
+    <div className="bg-blue-200 pt-2">
+
+        <div>
+
         <h1 className="text-center text-5xl font-extrabold mt-8">
           Références
         </h1>
@@ -77,6 +79,8 @@ export function ReferenceDiv() {
               
             }
         </Swiper>
+        </div>
+      
       </div>
   );
 }
