@@ -1,90 +1,58 @@
 "use client";
 import Image from "next/image";
 import robot2 from "@/public/robot2.webp";
-import { useEffect } from "react";
-// import AOS from "aos";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import LightRays from "@/components/LightRays"
+import { TextGenerateEffect } from "@/src/components/ui/text-generate-effect";
 
 export function Intro() {
-  
+   const word = "INTERLINK votre partenaire digital pour des solutions logicielles innovantes, propulsées par l'intelligence artificielle"
+   const subwords = "Depuis 15 ans, INTERLINK conçoit des solutions digitales sur mesure pour les entreprises et les institutions..."
+   
+   
+  // Split Text, Text Type, Blur Text, Glitch Text, Count Up
   return (
-    <>
-        <script>
-            AOS.init();
-        </script>
-      <section
-        id="hero-area"
-        className="w-full h-screen pb-50 relative overflow-hidden"
-      >
-        <video
-          id="background-video"
-          className="absolute inset-0 w-full h-screen object-cover -z-10"
-          // priority={true}
-          autoPlay
-          loop
-          muted
-        >
-          <source src="/bg-interlink.mp4" type="video/mp4" />
-          <track
-            src="/path/to/captions.vtt"
-            kind="subtitles"
-            srcLang="en"
-            label="English"
-          />
-          Your browser does not support the video tag.
-        </video>
-        <div className="relative max-w-screen-xl mx-auto grid grid-cols-12 gap-x-6 overflow-hidden z-10">
-          <div className="col-span-12 lg:col-span-6 mt-12 xl:mt-10 space-y-4 sm:space-y-6 px-6 text-center sm:text-left">
-            <h1
-              data-aos="fade-right"
-              data-aos-once="true"
-              className="lg:text-[2.5rem] md:text-[2.5rem] text-[1.5rem]  xl:text-4xl  font-bold leading-tight sm:pr-8 xl:pr-10"
-            >
-              <span className="text-header-gradient">INTERLINK</span> votre
-              partenaire digital pour des solutions logicielles innovantes,
-              propulsées par l&apos;intelligence artificielle
-            </h1>
+    
+        
+        <div className="bg-black py-[4.5%] flex flex-row items-center justify-center flex-wrap gap-x-4 gap-y-10 relative">
+          <div className="absolute inset-0">
+             <LightRays
+              raysOrigin="right"
+              lightSpread={2}
+              fadeDistance={2}
+              saturation={2}
+              mouseInfluence={1}
+              noiseAmount={0.26}
+              className="custom-rays"
+            />
+          </div>
+          <div className="text-white relative z-10 font-serif flex flex-col items-start gap-y-8">
+            
+            <TextGenerateEffect
+              className="font-black max-w-xl text-2xl"
+              words={word} />
+            <TextGenerateEffect
+              className="font-black max-w-xl text-lg"
+              words={subwords} />
+             
+            
+            <Button asChild className="bg-blue-950 font-black p-6 text-xl font-serif">
+              <Link className="" href="#contact">
+                Contactez Nous
+              </Link>
+            </Button>
+          </div>
 
-            <p
-              data-aos="fade-down"
-              data-aos-once="true"
-              data-aos-delay="300"
-              className="paragraph  block"
-            >
-              Depuis 15 ans, INTERLINK conçoit des solutions digitales sur
-              mesure pour les entreprises et les institutions...
-            </p>
-            <div
-              data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-delay="700"
-              className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-2"
-            >
-              <div
-                className="text-center mb-10 wow fadeInUp"
-                data-wow-delay="1.2s"
-              >
-                <a className="bg-blue-900 px-20 py-2 text-white font-extrabold" href="#contact">
-                  Contactez Nous
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="col-span-12 lg:col-span-6">
-            <div className="w-full">
-              <Image
-                data-aos="fade-up"
-                data-aos-once="true"
-                // placeholder="blur"
-                // placeholder="blur"
-                priority
-                src={robot2}
-                alt=""
-                className="-mt-4 h-[30rem] lg:float-right relative sm:mx-auto z-10 hidden lg:block md:block"
-              />
-            </div>
-          </div>
+          
+
+          <Image
+          src={robot2}
+          alt=""
+          width={420}
+          />
+          
+           
         </div>
-      </section>
-    </>
   );
 }

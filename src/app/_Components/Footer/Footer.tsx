@@ -37,7 +37,7 @@ function Instagram() {
 export function Footer() {
   return (
     <>
-      <footer id="footer" className="bg-blue-950 md:py-24 md:px-32 flex flex-col md:flex-row md:justify-between">
+      <footer id="footer" className="bg-blue-950 md:py-24 md:px-32 flex flex-col md:flex-row md:justify-between flex-wrap">
 
         <div className="flex flex-col items-center md:gap-y-6">
             <Image

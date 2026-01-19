@@ -53,6 +53,12 @@ export const menuItems = [
     items: [],
   },
 
+  {
+    label: "Technologie",
+    href: "/tech",
+    items: [],
+  }
+
 ];
 
 export interface ImageProp {
