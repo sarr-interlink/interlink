@@ -48,17 +48,9 @@ export function ServiceClient({services}: {services:{data: ServiceType[]}}) {
 }
 
 const ServiceCard = ({service, attributes}: {service: ServiceType, attributes: ServiceTypeAttribute}) => {
-  const title = attributes.title || "No Title"
-  const body = attributes.description || "No Description"
+
     return (
-    // <FireworksBackground>
-        <ElectricBorder
-        color="red"
-        speed={2}
-        chaos={0.12}
-        className={"border-2"}
-        style={{  }}
-        >
+    
             <Card className="service-card w-70 h-70 md:w-120 md:h-70 ">
             
             <CardHeader>
@@ -79,10 +71,6 @@ const ServiceCard = ({service, attributes}: {service: ServiceType, attributes: S
             </CardContent>
             
             </Card>
-
-        </ElectricBorder>
-
-    // </FireworksBackground>
   )
 }
 

@@ -1,9 +1,7 @@
 "use client"
 import Hyperspeed from "@/components/Hyperspeed";
-import RippleGrid from "@/components/RippleGrid";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ValueAttributeType, ValueType } from "@/src/app/_lib/types/ValuesType";
-import { TypewriterEffectSmooth } from "@/src/components/ui/typewriter-effect";
 
 export function ValuesClient({values}: {values: {data: ValueType[]}}) {
 
@@ -41,9 +39,9 @@ export function ValuesClient({values}: {values: {data: ValueType[]}}) {
 
 
 const ValueCard = ({attributes}: {attributes: ValueAttributeType}) => {
-  const title = attributes.title || "No Title"
+  
   return (
-    <Card className="w-70 h-70 md:w-120 md:h-70 bg-orange-200">
+    <Card className="w-70 h-70 md:w-120 md:h-70 bg-transparent text-white">
       
       <CardHeader>
         <CardTitle className="flex flex-row items-center gap-5">

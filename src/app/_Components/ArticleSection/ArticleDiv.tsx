@@ -1,9 +1,12 @@
+'use client'
+
 import Image from "next/image";
 import Link from "next/link";
 import { Article } from "../utils";
 import { articles } from "../utils";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { BackgroundGradient } from "@/src/components/ui/background-gradient";
 
 export function ArticleSection() {
   
@@ -37,6 +40,9 @@ export function ArticleSection() {
 
 const ArticleCard = ({article}: {article: Article}) => {
     return (
+        <BackgroundGradient className="">
+
+        
         <Card className="w-md">
             <CardHeader>
                 <CardTitle className="gap-y-6 flex flex-col">
@@ -45,7 +51,7 @@ const ArticleCard = ({article}: {article: Article}) => {
                       alt={article.title}
                       width={500} // Définissez uniquement la largeur ou utilisez 'layout="responsive"' pour les images responsives
                       height={160} // Assurez-vous que la dimension opposée est 'auto' pour éviter la déformation
-                      className="w-full h-auto object-cover rounded-t-lg" // Utilisez 'h-auto' pour maintenir le ratio
+                      className="w-full object-cover rounded-t-lg" // Utilisez 'h-auto' pour maintenir le ratio
                     />
                     <h3 className="text-2xl text-blue-950">{article.title}</h3>
                 </CardTitle>
@@ -61,5 +67,6 @@ const ArticleCard = ({article}: {article: Article}) => {
                 </Link>
             </CardFooter>
         </Card>
+        </BackgroundGradient>
     )
 }
