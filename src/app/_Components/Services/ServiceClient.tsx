@@ -2,10 +2,11 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { IconTypeData, IconTypeDataAttribute, ServiceType, ServiceTypeAttribute } from "@/src/app/_lib/types/ServiceType";
-import ElectricBorder from "@/components/ElectricBorder"
 import { TypewriterEffectSmooth } from "@/src/components/ui/typewriter-effect";
 import { TextGenerateEffect } from "@/src/components/ui/text-generate-effect";
 import { StarsBackground } from "@/src/components/animate-ui/components/backgrounds/stars";
+import { BackgroundGradient } from "@/src/components/ui/background-gradient";
+
 
 export function ServiceClient({services}: {services:{data: ServiceType[]}}) {
     const description = "Nous proposons des solutions innovantes en e-gouvernance, e-santé, développement informatique, messagerie, géolocalisation et cybersécurité."
@@ -36,7 +37,7 @@ export function ServiceClient({services}: {services:{data: ServiceType[]}}) {
               
               if (attributes.title !== "Slogan") {
                 return (
-                        <ServiceCard key={service.id} service={service} attributes={attributes} />
+                        <ServiceCard key={service.id} attributes={attributes} />
                     
                 );
               }
@@ -47,18 +48,11 @@ export function ServiceClient({services}: {services:{data: ServiceType[]}}) {
   );
 }
 
-const ServiceCard = ({service, attributes}: {service: ServiceType, attributes: ServiceTypeAttribute}) => {
-  const title = attributes.title || "No Title"
-  const body = attributes.description || "No Description"
+const ServiceCard = ({attributes}: {attributes: ServiceTypeAttribute}) => {
+
     return (
-    // <FireworksBackground>
-        <ElectricBorder
-        color="red"
-        speed={2}
-        chaos={0.12}
-        className={"border-2"}
-        style={{  }}
-        >
+            <BackgroundGradient className="">
+
             <Card className="service-card w-70 h-70 md:w-120 md:h-70 ">
             
             <CardHeader>
@@ -79,10 +73,8 @@ const ServiceCard = ({service, attributes}: {service: ServiceType, attributes: S
             </CardContent>
             
             </Card>
-
-        </ElectricBorder>
-
-    // </FireworksBackground>
+            </BackgroundGradient>
+    
   )
 }
 

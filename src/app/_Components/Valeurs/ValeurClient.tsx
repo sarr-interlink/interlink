@@ -1,9 +1,8 @@
 "use client"
 import Hyperspeed from "@/components/Hyperspeed";
-import RippleGrid from "@/components/RippleGrid";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ValueAttributeType, ValueType } from "@/src/app/_lib/types/ValuesType";
-import { TypewriterEffectSmooth } from "@/src/components/ui/typewriter-effect";
+import { BackgroundGradient } from "@/src/components/ui/background-gradient";
 
 export function ValuesClient({values}: {values: {data: ValueType[]}}) {
 
@@ -41,26 +40,29 @@ export function ValuesClient({values}: {values: {data: ValueType[]}}) {
 
 
 const ValueCard = ({attributes}: {attributes: ValueAttributeType}) => {
-  const title = attributes.title || "No Title"
+  
   return (
-    <Card className="w-70 h-70 md:w-120 md:h-70 bg-orange-200">
-      
-      <CardHeader>
-        <CardTitle className="flex flex-row items-center gap-5">
-          <i className={`${attributes.iconClass} text-4xl bg-blue-950 text-yellow-500 rounded-md p-3`}></i>
-          {/* <TypewriterEffectSmooth words={[{text: title}]} /> */}
-          <h4 className="">
-            {attributes.title || "No Title"}
-          </h4>
-        </CardTitle>
-      </CardHeader>
+    <BackgroundGradient>
 
-      <CardContent>
-        <p className="text-body-color dark:text-dark-6 font-bold text-xl">
-          {attributes.description || "No Description"}
-        </p>
-      </CardContent>
-    </Card>
+      <Card className="w-70 h-70 md:w-120 md:h-70 bg-black text-white">
+        
+        <CardHeader>
+          <CardTitle className="flex flex-row items-center gap-5">
+            <i className={`${attributes.iconClass} text-4xl bg-blue-950 text-yellow-500 rounded-md p-3`}></i>
+            {/* <TypewriterEffectSmooth words={[{text: title}]} /> */}
+            <h4 className="">
+              {attributes.title || "No Title"}
+            </h4>
+          </CardTitle>
+        </CardHeader>
+
+        <CardContent>
+          <p className="text-body-color dark:text-dark-6 font-bold text-xl">
+            {attributes.description || "No Description"}
+          </p>
+        </CardContent>
+      </Card>
+    </BackgroundGradient>
   )
 }
 

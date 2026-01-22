@@ -15,9 +15,7 @@ export default function Home() {
     <section>
       <div className="overflow-hidden">
         <Intro />
-        {/* <StarsBackground> */}
-          <Services />
-        {/* </StarsBackground> */}
+        <Services />
         <Offres />
         <ProductsDiv />
         <Values />
