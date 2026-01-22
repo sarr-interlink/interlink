@@ -9,6 +9,7 @@ import Link from "next/link";
 import { BackgroundBeams } from "@/src/components/ui/background-beams";
 import { TypewriterEffectSmooth } from "@/src/components/ui/typewriter-effect";
 import { TextGenerateEffect } from "@/src/components/ui/text-generate-effect";
+import { BackgroundGradient } from "@/src/components/ui/background-gradient";
 
 export function OffreClient({
     HebergementSaasDesciptionData,  
@@ -66,7 +67,10 @@ export function OffreClient({
 const OffreCard = ({hebergement, pathImg}: {hebergement: HSaas, pathImg: string}) => {
   return (
     
-    <Card className="max-w-lg bg-orange-200 bg-transparent">
+
+    <BackgroundGradient>
+
+    <Card className="max-w-lg bg-transparent">
 
       <CardHeader>
         <CardTitle className="flex flex-col items-center justify-center gap-y-5">
@@ -77,14 +81,14 @@ const OffreCard = ({hebergement, pathImg}: {hebergement: HSaas, pathImg: string}
           width={200}
           height={1000}
           />
-          <h3 className="text-xl font-extrabold text-white">
+          <h3 className="text-2xl font-extrabold text-white">
             {hebergement.attributes.title}
           </h3>
         </CardTitle>
       </CardHeader>
 
       <CardContent className="">
-        <p className="text-orange-300 font-medium text-lg">
+        <p className="text-orange-300 font-bold text-xl text-center">
           {hebergement.attributes.description}
         </p>
       </CardContent>
@@ -98,5 +102,7 @@ const OffreCard = ({hebergement, pathImg}: {hebergement: HSaas, pathImg: string}
       </CardFooter>
 
     </Card>
+    </BackgroundGradient>
+    
   )
 }

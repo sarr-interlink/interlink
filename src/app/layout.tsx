@@ -43,22 +43,10 @@ export default function RootLayout({
       </head>
 
     
-      <body className={montserrat.className}>
-        
-        {/* <ThemeProvider 
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange > */}
-          
+      <body className={montserrat.className}>  
             <Header />
-            
             {children}
-
             <Footer />
-
-        {/* </ThemeProvider> */}
-      
       </body>
     
     </html>
