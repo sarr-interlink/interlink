@@ -29,11 +29,11 @@ export function OffreClient({
     <div className="py-16 bg-neutral-950 relative">
         <div className="relative z-10">
             <div className="flex flex-row justify-center">
-              <TypewriterEffectSmooth className="text-center text-5xl font-extrabold text-orange-300" words={[{text: offresText, 
+              <TypewriterEffectSmooth cursorClassName="hidden" className="text-center text-5xl font-extrabold text-orange-300" words={[{text: offresText, 
                 className: ""}]}/>
             </div>
             <div className="flex flex-row justify-center">
-              <TypewriterEffectSmooth className="text-center font-black mt-4 text-orange-200" words={[{text: modeH, 
+              <TypewriterEffectSmooth cursorClassName="hidden" className="text-center font-black mt-4 text-orange-200" words={[{text: modeH, 
                 className: ""}]}/>
             </div>
             <TextGenerateEffect className="font-medium text-lg mt-4 text-orange-100 max-w-5xl mx-auto"

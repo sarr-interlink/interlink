@@ -17,7 +17,7 @@ export function ServiceClient({services}: {services:{data: ServiceType[]}}) {
 
     <div id="services" className="py-16">
         <div className="flex flex-row justify-center">
-          <TypewriterEffectSmooth className="services-title text-6xl text-center font-extrabold mb-3 text-white" words={[{text: "Services"}]} />
+          <TypewriterEffectSmooth cursorClassName="hidden" className="services-title text-6xl text-center font-extrabold mb-3 text-white" words={[{text: "Services"}]} />
         </div>
         
         <TextGenerateEffect 
@@ -60,7 +60,7 @@ const ServiceCard = ({attributes}: {attributes: ServiceTypeAttribute}) => {
                 
                 <i className={`${attributes.iconClass} service-icon text-5xl text-center text-yellow-600 bg-blue-950 p-3 rounded-xl mt-2`}></i>      
                 {/* <h4 className="lg:text-lg md:text-xl font-semibold text-blue-700"> */}
-                    <TypewriterEffectSmooth className="text-sm" words={[{text: attributes.title || "No Title",
+                    <TypewriterEffectSmooth cursorClassName="hidden" className="text-sm" words={[{text: attributes.title || "No Title",
                       className: "text-2xl font-bold"}]} />
                 {/* </h4> */}
                 </CardTitle>

@@ -20,7 +20,7 @@ export default function Home() {
         <ProductsDiv />
         <Values />
         <ReferenceDiv />
-        <ArticleSection />
+        {/* <ArticleSection /> */}
         <Testimonial />
         <MessageForm />
         <Map />

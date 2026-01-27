@@ -18,15 +18,6 @@ import { getReferences } from "@/src/app/_lib/data-services";
 import { STRAPI_URL } from "@/src/app/_lib/utils";
 import { ReferenceAttributeType, ReferenceType } from "../../_lib/types/ReferenceType";
 import LogoLoop from "@/components/LogoLoop";
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
-
-const techLogos = [
-  { node: <SiReact />, title: "React", href: "https://react.dev" },
-  { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
-  { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
-  { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
-  { node: <Image height={100} width={100} src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDz7VeoLeo6kyPUJokKtq8ISE_j5MNreaXqKFKqXqLJ6TbPV0jJrhuZ3nPH_Ee47MRTfXx5usIrDcQFb2fFUlpQKmiByAmz6L5OMnU4cU&s'}/>}
-];
 
 export function ReferenceDiv() {
   const [references, setReferences] = useState<{data: ReferenceType[]}>({data:[]});
@@ -53,13 +44,12 @@ export function ReferenceDiv() {
     references && Array.isArray(references.data) ? references.data : [];
   return (
 
-    <>
-
-    <h1 className="text-center text-5xl font-extrabold mt-8">
-      Références
-    </h1>
-    <LogoH data={swipeData(referencesData)}/>
-    </>
+    <div className="bg-gray-50">
+      <h1 className="text-center text-5xl font-extrabold pt-8">
+        Références
+      </h1>
+      <LogoH data={swipeData(referencesData)}/>
+    </div>
 
 
     // <div className="bg-blue-200 pt-2">
@@ -112,7 +102,7 @@ const LogoH = ({data}: {data: {node: React.ReactNode}[]}) => {
       {/* Basic horizontal loop */}
       <LogoLoop
         className="h-64 flex flex-col justify-center"
-        logos={data == undefined ? techLogos : data}
+        logos={data}
         speed={40}
         direction="left"
         logoHeight={130}

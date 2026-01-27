@@ -4,7 +4,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // import required modules
-import { Pagination, Navigation, Autoplay} from 'swiper/modules';
+import { Pagination, Navigation, Autoplay, FreeMode} from 'swiper/modules';
 import AuroraShader  from '@/src/components/lightswind/aurora-shader'
 // Import Swiper styles
 import 'swiper/css';
@@ -52,23 +52,25 @@ export function ProductsDiv() {
 
 
   return (
-    <div className="pt-64 pb-10 px-32 bg-black/[0.96] antialiased bg-grid-white/[0.02] overflow-hidden relative">
+    <div className="pt-14 pb-10 px-32 bg-gray-700 antialiased bg-grid-white/[0.02] overflow-hidden relative">
       <Spotlight />
       <div className='relative z-10'>
         <h1 className="text-center text-4xl font-extrabold text-white mb-5">Produits</h1>
                 <Swiper
+                slidesPerView={3}
                 spaceBetween={30}
-                centeredSlides={true}
+                freeMode={true}
+                loop={true}
                 autoplay={{
                   delay: 2500,
                   disableOnInteraction: false,
                 }}
                 pagination={{
                   clickable: true,
-                  type: 'progressbar'
+                  
                 }}
                 navigation={true}
-                modules={[Autoplay, Pagination, Navigation]}
+                modules={[Autoplay, FreeMode, Pagination, Navigation]}
                 className="m-8 w-full"
                 // pagination={{
                 //     type: 'progressbar',
@@ -78,7 +80,7 @@ export function ProductsDiv() {
                 >
                 {productData.map((product: ProductType) => {
                     return (
-                        <SwiperSlide className='px-[35%] py-16' key={product.id}>
+                        <SwiperSlide className='py-16 px-[3%]' key={product.id}>
                             <CarouselCard key={product.id} product={product}/>
                         </SwiperSlide>
                     )
@@ -94,7 +96,7 @@ const CarouselCard = ({product}: {product: ProductType}) => {
     const attributes: ProductAttributeType = product.attributes || {} as ProductAttributeType;
     const logoUrl = attributes.logo?.data?.attributes?.url || "";
     return (
-        <Card className="w-70 h-70 md:w-120 md:h-70 bg-blue-950 text-white">
+        <Card className="py-8 w-70 md:w-120 md:h-100 bg-blue-950 text-white">
             <CardHeader>
                 <CardTitle className="flex flex-row items-center gap-x-6">
                     <Image
@@ -110,7 +112,7 @@ const CarouselCard = ({product}: {product: ProductType}) => {
                 </CardTitle>
             </CardHeader>
             <CardContent>
-                <p className="text-lg font-medium line-clamp-4">
+                <p className="text-lg font-medium line-clamp-7">
                     {attributes.Description}
                 </p>
             </CardContent>

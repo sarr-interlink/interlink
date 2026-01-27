@@ -16,7 +16,7 @@ export function DesktopNavigation() {
   const isMobile = useIsMobile()
 
   return (
-    
+
         <NavigationMenu viewport={isMobile} className="hidden md:block">
         
           <NavigationMenuList className="flex-1 flex">
@@ -36,7 +36,7 @@ export function DesktopNavigation() {
 const NavigationItem = ({item}: {item: MenuItemType}) => {
     return (
         <NavigationMenuItem className="px-3">
-          <NavigationMenuLink className="text-xl font-extrabold text-white italic" asChild>
+          <NavigationMenuLink className="text-md font-extrabold text-white " asChild>
             <Link href={item.href}>{item.label}</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>

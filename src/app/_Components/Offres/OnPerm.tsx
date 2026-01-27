@@ -69,7 +69,7 @@ const OnPermCard = ({hebergement, pathImg}: {hebergement: HebergementLocalType, 
             </CardHeader>
 
             <CardContent>
-                <p className="text-lg">{hebergement.attributes.description}</p>
+                <p className="text-lg font-medium">{hebergement.attributes.description}</p>
             </CardContent>
         </Card>
     )
