@@ -44,53 +44,13 @@ export function ReferenceDiv() {
     references && Array.isArray(references.data) ? references.data : [];
   return (
 
-    <div className="bg-gray-50">
+    <div className="">
       <h1 className="text-center text-5xl font-extrabold pt-8">
         Références
       </h1>
       <LogoH data={swipeData(referencesData)}/>
     </div>
 
-
-    // <div className="bg-blue-200 pt-2">
-
-    //     <div>
-
-    //     <h1 className="text-center text-5xl font-extrabold mt-8">
-    //       Références
-    //     </h1>
-
-    //     <Swiper
-    //       // install Swiper modules
-    //       modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-    //       slidesPerView={5}
-    //       spaceBetween={30}
-    //       centeredSlides={true}
-    //       autoplay={{
-    //         delay: 2500,
-    //         disableOnInteraction: false,
-    //       }}
-    //       className="m-8 w-full" 
-    //     >
-          
-    //         {
-    //           referencesData.length > 0 &&
-    //             referencesData.map((reference: ReferenceType) => {
-    //               const attributes: ReferenceAttributeType = reference.attributes || {};
-    //               const logoUrl = attributes.logo?.data?.attributes?.url || "";
-
-    //               return (
-    //                 <SwiperSlide key={reference.id} className="p-32 flex flex-row items-center justify-center">
-    //                     <ReferenceSlide attributes={attributes} logoUrl={logoUrl}/>
-    //                 </SwiperSlide>
-    //               );
-    //             })
-              
-    //         }
-    //     </Swiper>
-    //     </div>
-      
-    //   </div>
   );
 }
 
@@ -137,23 +97,4 @@ const swipeData = (referencesData: ReferenceType[]) => {
   console.log(data);
   
   return data
-}
-
-const ReferenceSlide = ({attributes, logoUrl}: {attributes: ReferenceAttributeType, logoUrl: string}) => {
-    return (
-        <HoverCard>
-            <HoverCardTrigger>
-                <Image
-                width={100} // Specify the width of the image (used as a ratio)
-                height={10}
-                className="client-logo w-full h-auto"
-                src={`${STRAPI_URL}${logoUrl}`}
-                alt={attributes.Name || "Client logo"}
-                />
-            </HoverCardTrigger>
-            <HoverCardContent>
-                {attributes.Name || "Client logo"}
-            </HoverCardContent>
-        </HoverCard>
-    )
 }

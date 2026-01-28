@@ -6,7 +6,7 @@ import { methodologieTabData } from "../utils"
 
 export const Methodologie = () => {
     return (
-        <Card className="mx-50 mb-10">
+        <Card className="px-64 py-16 ">
             <CardHeader>
                 <CardTitle>
                     <h1 className="text-center font-bold text-5xl">Notre Methodologie</h1>

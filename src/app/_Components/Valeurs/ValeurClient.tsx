@@ -11,7 +11,6 @@ export function ValuesClient({values}: {values: {data: ValueType[]}}) {
     <div className="relative overflow-hidden py-16 bg-black">
         <div className="absolute inset-0">
             <Hyperspeed
-                activePreset="five"
                 />
         </div>
 

@@ -12,7 +12,7 @@ export default function ServicesPage() {
             {/* <h1 className="text-7xl text-center py-[25%]">Services Page In Construction</h1> */}
             <Services />
             <Methodologie />
-            <Technologie />
+            {/* <Technologie /> */}
 
         </div>
     )

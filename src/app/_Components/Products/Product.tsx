@@ -5,7 +5,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 // import required modules
 import { Pagination, Navigation, Autoplay, FreeMode} from 'swiper/modules';
-import AuroraShader  from '@/src/components/lightswind/aurora-shader'
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
