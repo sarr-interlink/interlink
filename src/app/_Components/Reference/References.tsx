@@ -1,19 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import {
-  Autoplay,
-  Navigation,
-  Scrollbar,
-  A11y,
-  Pagination,
-} from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import Image from "next/image";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { getReferences } from "@/src/app/_lib/data-services";
 import { STRAPI_URL } from "@/src/app/_lib/utils";
 import { ReferenceAttributeType, ReferenceType } from "../../_lib/types/ReferenceType";
@@ -21,8 +9,8 @@ import LogoLoop from "@/components/LogoLoop";
 
 export function ReferenceDiv() {
   const [references, setReferences] = useState<{data: ReferenceType[]}>({data:[]});
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string>("");
+  const [, setLoading] = useState<boolean>(true);
+  const [, setError] = useState<string>("");
 
   useEffect(() => {
     async function fetchReference() {

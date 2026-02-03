@@ -24,8 +24,8 @@ export function Testimonial() {
 
 
     const [testimonials, setTestimonials] = useState<{data: TestimonialType[]}>({data: []});
-    const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<string>("");
+    const [, setLoading] = useState<boolean>(true);
+    const [, setError] = useState<string>("");
 
     useEffect(() => {
         async function fetTestimonials() {

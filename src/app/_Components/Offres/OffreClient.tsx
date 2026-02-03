@@ -18,12 +18,8 @@ export function OffreClient({
     {
     HebergementSaasDesciptionData: {data: HSaasDescriptionType},
     hebergementSaas: HSaas[],
-    hrefSpecific: string
-    }) {
+    hrefSpecific: string }) {
 
-//   const HebergementSaasDesciptionData: {data: HSaasDescriptionType} = await getHebergementSaasDesciption();
-//   const hebergementSaasData: {data: HSaas[]} = await getHebergementsSaas();
-//   const hebergementSaas: HSaas[] = hebergementSaasData?.data;
   const offresText = "Nos Offres"
   const modeH = HebergementSaasDesciptionData.data.attributes.title
   const modeHbDescription = HebergementSaasDesciptionData.data.attributes.description

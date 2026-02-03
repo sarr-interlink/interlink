@@ -1,10 +1,9 @@
 "use client"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { IconTypeData, IconTypeDataAttribute, ServiceType, ServiceTypeAttribute } from "@/src/app/_lib/types/ServiceType";
+import { ServiceType, ServiceTypeAttribute } from "@/src/app/_lib/types/ServiceType";
 import { TypewriterEffectSmooth } from "@/src/components/ui/typewriter-effect";
 import { TextGenerateEffect } from "@/src/components/ui/text-generate-effect";
-import { StarsBackground } from "@/src/components/animate-ui/components/backgrounds/stars";
 import { BackgroundGradient } from "@/src/components/ui/background-gradient";
 
 
@@ -31,8 +30,6 @@ export function ServiceClient({services}: {services:{data: ServiceType[]}}) {
             services.data.length > 0 &&
             services.data.map((service: ServiceType) => {
               const attributes: ServiceTypeAttribute = service.attributes || {} as ServiceTypeAttribute;
-              const iconData: IconTypeData = attributes.icon?.data || {} as IconTypeData;
-              const iconAttributes: IconTypeDataAttribute = iconData.attributes || {} as IconTypeDataAttribute;
               console.log(attributes.iconClass);
               
               if (attributes.title !== "Slogan") {

@@ -1,4 +1,3 @@
-import { ArticleSection } from "./_Components/ArticleSection/ArticleDiv";
 import { Testimonial } from "./_Components/ClientSection/ClientSection";
 import { Intro } from "./_Components/Intro/Intro";
 import { Map } from "./_Components/Map/Map";

@@ -21,8 +21,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function ProductsDiv() {
   const [members, setMembers] = useState<{data: ProductType[]}>({data: []});
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string>("");
+  const [, setLoading] = useState<boolean>(true);
+  const [, setError] = useState<string>("");
 
   useEffect(() => {
     async function fetchMembers() {
