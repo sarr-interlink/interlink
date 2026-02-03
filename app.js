@@ -1,7 +1,12 @@
-const { createServer } = require("http");
-const { parse } = require("url");
-const next = require("next");
-const { createProxyMiddleware } = require("http-proxy-middleware");
+// const { createServer } = require("http");
+// const { parse } = require("url");
+// const next = require("next");
+// const { createProxyMiddleware } = require("http-proxy-middleware");
+
+import { createServer } from "http";
+import { parse } from "url"
+import next from "next";
+import { createProxyMiddleware } from "http-proxy-middleware"
 
 const dev = process.env.NODE_ENV !== "production";
 const hostname = "localhost";
