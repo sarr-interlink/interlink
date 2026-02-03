@@ -16,11 +16,10 @@ export default function Home() {
       <div className="overflow-hidden">
         <Intro />
         <Services />
-        <Offres />
+        <Offres hrefSpecific="/pricing"/>
         <ProductsDiv />
         <Values />
         <ReferenceDiv />
-        {/* <ArticleSection /> */}
         <Testimonial />
         <MessageForm />
         <Map />

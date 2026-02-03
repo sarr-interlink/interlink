@@ -1,19 +1,14 @@
-import Image from "next/image";
-import Link from "next/link";
+
 import {
   getHebergement,
   getHebergementLocaleDesciption,
-  getHebergementSaasDesciption,
   getHebergementsLocale,
-  getHebergementsSaas,
   getTarification,
 } from "@/src/app/_lib/data-services";
 
 import { STRAPI_URL } from "@/src/app/_lib/utils";
 import { Offres } from "../_Components/Offres/Offres";
 import { HebergementAttributeImageType, HebergementType } from "../_lib/types/HebergementType";
-import { HSaasDescriptionType } from "../_lib/types/HSaasDescription";
-import { HSaas } from "../_lib/types/HSaas";
 import { HebergementLocalDesciptionType } from "../_lib/types/HebergementLocalDesc";
 import { HebergementLocalType } from "../_lib/types/HebergementLocal";
 import { TarificationType } from "../_lib/types/TarificationTYpe";
@@ -46,7 +41,7 @@ export default async function Pricing() {
         <div>
             {/* <h1 className="text-7xl text-center py-[25%]">Pricing Page In Construction</h1> */}
             <OffreIntro hebergement={hebergement} pathImg={introPathImage}/>
-            <Offres />
+            <Offres hrefSpecific="/contact"/>
             <OnPerm HebergementLocaleDesciptionData={HebergementLocaleDesciptionData} hebergementLocale={hebergementLocale}/>
             <Tarif tarificationData={tarificationData} pathImg={tarifPathImg} />
         </div>

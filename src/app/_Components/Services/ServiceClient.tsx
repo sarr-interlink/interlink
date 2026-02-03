@@ -13,15 +13,15 @@ export function ServiceClient({services}: {services:{data: ServiceType[]}}) {
 //  const services: {data: ServiceType[]} = await getServices();
 
   return (
-    <StarsBackground>
+    // <StarsBackground>
 
     <div id="services" className="py-16">
         <div className="flex flex-row justify-center">
-          <TypewriterEffectSmooth cursorClassName="hidden" className="services-title text-6xl text-center font-extrabold mb-3 text-white" words={[{text: "Services"}]} />
+          <TypewriterEffectSmooth cursorClassName="hidden" className="services-title text-6xl text-center font-extrabold mb-3" words={[{text: "Services"}]} />
         </div>
         
         <TextGenerateEffect 
-        className="text-center font-bold text-gray-300 w-3xl mx-auto"
+        className="text-center font-bold w-3xl mx-auto text-black"
         words={description}/>
         
             
@@ -44,7 +44,7 @@ export function ServiceClient({services}: {services:{data: ServiceType[]}}) {
             })}
         </div>
       </div>
-    </StarsBackground>
+    // </StarsBackground>
   );
 }
 

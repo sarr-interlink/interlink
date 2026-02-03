@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import './LogoLoop.css';
+import Image from 'next/image';
 
 export type LogoItem =
   | {
@@ -306,9 +307,9 @@ export const LogoLoop = React.memo<LogoLoopProps>(
             {(item as any).node}
           </span>
         ) : (
-          <img
+          <Image
             src={(item as any).src}
-            srcSet={(item as any).srcSet}
+            // srcSet={(item as any).srcSet}
             sizes={(item as any).sizes}
             width={(item as any).width}
             height={(item as any).height}
