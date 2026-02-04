@@ -30,7 +30,7 @@ export function ServiceClient({services}: {services:{data: ServiceType[]}}) {
             services.data.length > 0 &&
             services.data.map((service: ServiceType) => {
               const attributes: ServiceTypeAttribute = service.attributes || {} as ServiceTypeAttribute;
-              console.log(attributes.iconClass);
+              // console.log(attributes.iconClass);
               
               if (attributes.title !== "Slogan") {
                 return (

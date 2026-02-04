@@ -1,6 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import {Services} from "../_Components/Services/Service"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import Image from "next/image"
 import { techImages, ImageProp } from "../_Components/utils"
 import { Methodologie } from "../_Components/Services/Methodologie"
@@ -12,7 +11,7 @@ export default function ServicesPage() {
             {/* <h1 className="text-7xl text-center py-[25%]">Services Page In Construction</h1> */}
             <Services />
             <Methodologie />
-            {/* <Technologie /> */}
+            <Technologie />
 
         </div>
     )

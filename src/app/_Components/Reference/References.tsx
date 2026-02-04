@@ -82,7 +82,7 @@ const swipeData = (referencesData: ReferenceType[]) => {
                 return {node: ImageComp}
 
   })
-  console.log(data);
+  // console.log(data);
   
   return data
 }

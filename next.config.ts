@@ -4,13 +4,13 @@ const nextConfig: NextConfig = {
   // next.config.js
   // optimizeCss: false,
   // enableBabelRuntime: true,
-  typescript: {
+  // typescript: {
     // !! WARN !!
     // Dangerously allow production builds to successfully complete even if
     // your project has type errors.
     // !! WARN !!
-    ignoreBuildErrors: true,
-  },
+    // ignoreBuildErrors: true,
+  // },
   images: {
     unoptimized: true,
     remotePatterns: [
