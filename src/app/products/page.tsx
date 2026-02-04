@@ -2,9 +2,8 @@ import Image from "next/image";
 import { getProducts } from "@/src/app/_lib/data-services";
 import { STRAPI_URL } from "@/src/app/_lib/utils";
 import { ProductAttributeType, ProductType } from "../_lib/types/ProductType";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { LucideArrowRight } from 'lucide-react';
-import { title } from "process";
 import Link from "next/link";
 
 

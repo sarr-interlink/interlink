@@ -1,5 +1,4 @@
-import Image from "next/image"
-import newlogoInterlink from "@/public/assets/interlink-assets/images/4.svg"
+
 import { Button } from "@/components/ui/button";
 import {
   Drawer,

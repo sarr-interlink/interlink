@@ -43,6 +43,7 @@ const NavigationItem = ({item}: {item: MenuItemType}) => {
     )
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function ListItem({
   title,
   children,

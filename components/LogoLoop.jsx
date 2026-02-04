@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState, memo } from 'react';
 import './LogoLoop.css';
+import Image from 'next/image';
 
 const ANIMATION_CONFIG = { SMOOTH_TAU: 0.25, MIN_COPIES: 2, COPY_HEADROOM: 2 };
 
@@ -239,7 +240,7 @@ export const LogoLoop = memo(
             {item.node}
           </span>
         ) : (
-          <img
+          <Image
             src={item.src}
             srcSet={item.srcSet}
             sizes={item.sizes}
