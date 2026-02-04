@@ -239,7 +239,7 @@ const content = [
 export default function StickyScrollRevealDemo() {
   return (
     <div className="w-full overflow-hidden">
-      <StickyScroll content={content} />
+      <StickyScroll content={content}/>
     </div>
   );
 }

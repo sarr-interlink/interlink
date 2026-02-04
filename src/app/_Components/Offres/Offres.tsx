@@ -7,7 +7,7 @@ import { HSaas } from "../../_lib/types/HSaas";
 
 import { OffreClient } from "./OffreClient";
 
-export async function Offres() {
+export async function Offres({hrefSpecific}: {hrefSpecific: string}) {
 
   const HebergementSaasDesciptionData: {data: HSaasDescriptionType} = await getHebergementSaasDesciption();
   const hebergementSaasData: {data: HSaas[]} = await getHebergementsSaas();
@@ -17,6 +17,7 @@ export async function Offres() {
     <OffreClient 
     HebergementSaasDesciptionData={HebergementSaasDesciptionData}
     hebergementSaas={hebergementSaas}
+    hrefSpecific={hrefSpecific}
     />
   )
 }

@@ -6,37 +6,35 @@ import { HSaas, HSaasAttributeImageType } from "../../_lib/types/HSaas";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { BackgroundBeams } from "@/src/components/ui/background-beams";
 import { TypewriterEffectSmooth } from "@/src/components/ui/typewriter-effect";
 import { TextGenerateEffect } from "@/src/components/ui/text-generate-effect";
 import { BackgroundGradient } from "@/src/components/ui/background-gradient";
 
 export function OffreClient({
     HebergementSaasDesciptionData,  
-    hebergementSaas } : 
+    hebergementSaas,
+    hrefSpecific
+   } : 
     {
     HebergementSaasDesciptionData: {data: HSaasDescriptionType},
-    hebergementSaas: HSaas[]
-    }) {
+    hebergementSaas: HSaas[],
+    hrefSpecific: string }) {
 
-//   const HebergementSaasDesciptionData: {data: HSaasDescriptionType} = await getHebergementSaasDesciption();
-//   const hebergementSaasData: {data: HSaas[]} = await getHebergementsSaas();
-//   const hebergementSaas: HSaas[] = hebergementSaasData?.data;
   const offresText = "Nos Offres"
   const modeH = HebergementSaasDesciptionData.data.attributes.title
   const modeHbDescription = HebergementSaasDesciptionData.data.attributes.description
   return (
-    <div className="py-16 bg-neutral-950 relative">
+    <div className=" py-16 bg-white relative">
         <div className="relative z-10">
             <div className="flex flex-row justify-center">
-              <TypewriterEffectSmooth className="text-center text-5xl font-extrabold text-orange-300" words={[{text: offresText, 
+              <TypewriterEffectSmooth cursorClassName="hidden" className="text-center text-5xl font-extrabold text-black" words={[{text: offresText, 
                 className: ""}]}/>
             </div>
             <div className="flex flex-row justify-center">
-              <TypewriterEffectSmooth className="text-center font-black mt-4 text-orange-200" words={[{text: modeH, 
+              <TypewriterEffectSmooth cursorClassName="hidden" className="text-center font-black mt-4 text-black" words={[{text: modeH, 
                 className: ""}]}/>
             </div>
-            <TextGenerateEffect className="font-medium text-lg mt-4 text-orange-100 max-w-5xl mx-auto"
+            <TextGenerateEffect className="font-medium text-lg mt-4 text-black max-w-5xl mx-auto"
             words={modeHbDescription}
             />
 
@@ -49,14 +47,13 @@ export function OffreClient({
                     const imageUrl: string = image?.data?.attributes?.url || "";
                     const pathImg: string = STRAPI_URL + imageUrl
                     return (
-                    <OffreCard key={hebergement.id} hebergement={hebergement} pathImg={pathImg}/>
+                    <OffreCard hrefSpecific={hrefSpecific} key={hebergement.id} hebergement={hebergement} pathImg={pathImg}/>
                     )
                 })
                 }
 
             </div>
         </div>
-        <BackgroundBeams />
 
     </div>
   
@@ -64,13 +61,13 @@ export function OffreClient({
   );
 }
 
-const OffreCard = ({hebergement, pathImg}: {hebergement: HSaas, pathImg: string}) => {
+const OffreCard = ({hebergement, pathImg, hrefSpecific}: {hebergement: HSaas, pathImg: string, hrefSpecific: string}) => {
   return (
     
 
     <BackgroundGradient>
 
-    <Card className="max-w-lg bg-transparent">
+    <Card className="max-w-lg bg-cyan-800">
 
       <CardHeader>
         <CardTitle className="flex flex-col items-center justify-center gap-y-5">
@@ -95,7 +92,7 @@ const OffreCard = ({hebergement, pathImg}: {hebergement: HSaas, pathImg: string}
 
       <CardFooter className="flex flex-row justify-center mx-4 mb-6">
         <Button asChild className="w-full p-6 font-extrabold text-lg bg-blue-950">
-          <Link href="#">
+          <Link href={hrefSpecific}>
             {hebergement.attributes.actionLabel}
           </Link>
           </Button>

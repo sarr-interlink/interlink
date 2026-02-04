@@ -4,7 +4,7 @@ import { LucideMapPin, LucideMail, LucidePhone } from "lucide-react";
 
 export function MessageForm() {
   return (
-    <section className="py-28">
+    <section className="pt-10">
         <div>
             <h1 className="text-center text-4xl font-black">Laisser Un Message</h1>
         </div>

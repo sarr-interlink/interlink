@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import { getAbout, getWorks } from "@/src/app/_lib/data-services";
 import Image from "next/image";
@@ -19,11 +20,9 @@ export default async function Page() {
   const worksData = await getWorks();
   const works = worksData?.data;
   const about = aboutsData?.data;
-  const images = about?.attributes?.image?.data?.attributes;
   const imageUrl = about?.attributes?.image?.data?.attributes?.url || "";
   const fullImageUrl = `${STRAPI_URL}${imageUrl}`;
-  console.log("fullImageUrl", fullImageUrl);
-
+  
   return (
     <>
       <section className="h-[50vh] pb-50 relative overflow-hidden">
@@ -38,7 +37,7 @@ export default async function Page() {
         </div>
 
         {/* Text Content */}
-        <div className="relative max-w-screen-xl mx-auto h-full flex items-center z-10">
+        <div className="relative max-w-7xl mx-auto h-full flex items-center z-10">
           <div className="col-span-12 lg:col-span-6 space-y-4 sm:space-y-6 px-6 text-left">
             <h1 className="title-font text-white mb-4 text-xl font-bold leading-10 tracking-tight sm:text-5xl">
               Interlink
@@ -63,7 +62,7 @@ export default async function Page() {
                 <div className="text-justify py-5">
                   {Array.isArray(about?.attributes?.content) &&
                     about.attributes.content.length > 0 &&
-                    about.attributes.content.map((item, index) => {
+                    about.attributes.content.map((item: any, index: any) => {
                       switch (item.type) {
                         case "heading":
                           const HeadingTag = `h${item.level}` as keyof React.JSX.IntrinsicElements;
@@ -73,13 +72,13 @@ export default async function Page() {
                               className="title-font text-center pt-4 text-primary mb-4 text-xl font-bold leading-10 tracking-tight sm:text-3xl"
                               style={{
                                 fontWeight: item.children.some(
-                                  (child) => child.bold
+                                  (child: any) => child.bold
                                 )
                                   ? "bold"
                                   : "normal",
                               }}
                             >
-                              {item.children.map((child, childIndex) => {
+                              {item.children.map((child: any, childIndex: any) => {
                                 if (child.type === "text") {
                                   return (
                                     <React.Fragment key={childIndex}>
@@ -94,7 +93,7 @@ export default async function Page() {
                         case "paragraph":
                           return (
                             <p key={index} className="py-2">
-                              {item.children.map((child, childIndex) => {
+                              {item.children.map((child: any, childIndex: any) => {
                                 if (child.type === "text") {
                                   return (
                                     <span
@@ -119,10 +118,10 @@ export default async function Page() {
                           return (
                             // <ListTag key={index} className="list-disc">
                             <ListTag key={index} className="list-none">
-                              {item.children.map((listItem, listItemIndex) => (
+                              {item.children.map((listItem: any, listItemIndex: any) => (
                                 <li key={listItemIndex}>
                                   {listItem.children.map(
-                                    (child, childIndex) => {
+                                    (child: any, childIndex: any) => {
                                       if (child.type === "text") {
                                         return (
                                           <div
@@ -134,7 +133,7 @@ export default async function Page() {
                                               fill="none"
                                               viewBox="0 0 24 24"
                                               stroke="currentColor"
-                                              className="flex-shrink-0 w-6 h-6"
+                                              className="shrink-0 w-6 h-6"
                                             >
                                               <path
                                                 strokeLinecap="round"
@@ -320,10 +319,10 @@ export default async function Page() {
           </div>
         </div>
       </section>
-      <Card className="p-10 mb-3 relative border-zinc-200 !bg-transparent text-zinc-950 shadow dark:border-accent dark:bg-accent dark:text-zinc-50">
+      <Card className="p-10 mb-3 relative border-zinc-200 bg-transparent! text-zinc-950 shadow dark:border-accent dark:bg-accent dark:text-zinc-50">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
-            <div className="mx-auto mb-12 max-w-[800px] text-center lg:mb-20">
+            <div className="mx-auto mb-12 max-w-200 text-center lg:mb-20">
               <h1 className="title-font text-primary mb-4 text-xl font-bold leading-10 tracking-tight sm:text-5xl">
                 Nos métiers
               </h1>
@@ -333,7 +332,7 @@ export default async function Page() {
 
         <Tabs defaultValue={works[0]?.attributes?.title} className="w-full">
           <TabsList className="px-16 mx-auto w-8xl bg-white gap-x-8 h-auto">
-            {works.map((work) => (
+            {works.map((work: any) => (
               <TabsTrigger
                 key={work.id}
                 value={work.attributes.title}
@@ -353,19 +352,19 @@ export default async function Page() {
             ))}
           </TabsList>
 
-          {works.map((work) => (
+          {works.map((work: any) => (
             <TabsContent key={work.id} value={work.attributes.title}
             >
               <Card className="px-64 mb-3 relative border-transparent! shadow">
                 <CardContent className="space-y-2">
-                  {work.attributes.content.map((item, index) => {
+                  {work.attributes.content.map((item: any, index: any) => {
                     if (item.type === "list") {
                       const ListTag = item.format === "ordered" ? "ol" : "ul";
                       return (
                         <ListTag key={index} className="list-none pl-5">
-                          {item.children.map((listItem, listItemIndex) => (
+                          {item.children.map((listItem: any, listItemIndex: any) => (
                             <li key={listItemIndex}>
-                              {listItem.children.map((child, childIndex) => {
+                              {listItem.children.map((child: any, childIndex: any) => {
                                 if (child.type === "text") {
                                   return (
                                     <div
@@ -377,7 +376,7 @@ export default async function Page() {
                                         fill="none"
                                         viewBox="0 0 24 24"
                                         stroke="currentColor"
-                                        className="flex-shrink-0 w-6 h-6"
+                                        className="shrink-0 w-6 h-6"
                                       >
                                         <path
                                           strokeLinecap="round"

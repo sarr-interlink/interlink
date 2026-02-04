@@ -1,7 +1,7 @@
 export interface MenuItemType {
     label: string,
     href: string,
-    item?: MenuItemSubItem[]
+    items?: MenuItemSubItem[]
 }
 
 export interface MenuItemSubItem {
@@ -10,7 +10,7 @@ export interface MenuItemSubItem {
      description: string
 }
 
-export const menuItems = [
+export const menuItems: MenuItemType[] = [
   {
     label: "Accueil",
     href: "/",
@@ -34,6 +34,12 @@ export const menuItems = [
     href: "/products",
     items: [],
   },
+  
+  {
+    label: "Technologie",
+    href: "/tech",
+    items: [],
+  },
 
   {
     label: "A propos",
@@ -42,20 +48,8 @@ export const menuItems = [
   },
 
   {
-    label: "Articles",
-    href: "/article",
-    items: [],
-  },
-
-  {
     label: "Contact",
     href: "/contact",
-    items: [],
-  },
-
-  {
-    label: "Technologie",
-    href: "/tech",
     items: [],
   }
 

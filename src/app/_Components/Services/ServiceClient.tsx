@@ -1,10 +1,9 @@
 "use client"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { IconTypeData, IconTypeDataAttribute, ServiceType, ServiceTypeAttribute } from "@/src/app/_lib/types/ServiceType";
+import { ServiceType, ServiceTypeAttribute } from "@/src/app/_lib/types/ServiceType";
 import { TypewriterEffectSmooth } from "@/src/components/ui/typewriter-effect";
 import { TextGenerateEffect } from "@/src/components/ui/text-generate-effect";
-import { StarsBackground } from "@/src/components/animate-ui/components/backgrounds/stars";
 import { BackgroundGradient } from "@/src/components/ui/background-gradient";
 
 
@@ -13,15 +12,15 @@ export function ServiceClient({services}: {services:{data: ServiceType[]}}) {
 //  const services: {data: ServiceType[]} = await getServices();
 
   return (
-    <StarsBackground>
+    // <StarsBackground>
 
     <div id="services" className="py-16">
         <div className="flex flex-row justify-center">
-          <TypewriterEffectSmooth className="services-title text-6xl text-center font-extrabold mb-3 text-white" words={[{text: "Services"}]} />
+          <TypewriterEffectSmooth cursorClassName="hidden" className="services-title text-6xl text-center font-extrabold mb-3" words={[{text: "Services"}]} />
         </div>
         
         <TextGenerateEffect 
-        className="text-center font-bold text-gray-300 w-3xl mx-auto"
+        className="text-center font-bold w-3xl mx-auto text-black"
         words={description}/>
         
             
@@ -31,9 +30,7 @@ export function ServiceClient({services}: {services:{data: ServiceType[]}}) {
             services.data.length > 0 &&
             services.data.map((service: ServiceType) => {
               const attributes: ServiceTypeAttribute = service.attributes || {} as ServiceTypeAttribute;
-              const iconData: IconTypeData = attributes.icon?.data || {} as IconTypeData;
-              const iconAttributes: IconTypeDataAttribute = iconData.attributes || {} as IconTypeDataAttribute;
-              console.log(attributes.iconClass);
+              // console.log(attributes.iconClass);
               
               if (attributes.title !== "Slogan") {
                 return (
@@ -44,7 +41,7 @@ export function ServiceClient({services}: {services:{data: ServiceType[]}}) {
             })}
         </div>
       </div>
-    </StarsBackground>
+    // </StarsBackground>
   );
 }
 
@@ -60,7 +57,7 @@ const ServiceCard = ({attributes}: {attributes: ServiceTypeAttribute}) => {
                 
                 <i className={`${attributes.iconClass} service-icon text-5xl text-center text-yellow-600 bg-blue-950 p-3 rounded-xl mt-2`}></i>      
                 {/* <h4 className="lg:text-lg md:text-xl font-semibold text-blue-700"> */}
-                    <TypewriterEffectSmooth className="text-sm" words={[{text: attributes.title || "No Title",
+                    <TypewriterEffectSmooth cursorClassName="hidden" className="text-sm" words={[{text: attributes.title || "No Title",
                       className: "text-2xl font-bold"}]} />
                 {/* </h4> */}
                 </CardTitle>

@@ -24,8 +24,8 @@ export function Testimonial() {
 
 
     const [testimonials, setTestimonials] = useState<{data: TestimonialType[]}>({data: []});
-    const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<string>("");
+    const [, setLoading] = useState<boolean>(true);
+    const [, setError] = useState<string>("");
 
     useEffect(() => {
         async function fetTestimonials() {
@@ -64,7 +64,7 @@ export function Testimonial() {
     testimonials && Array.isArray(testimonials.data) ? testimonials.data : [];
 
   return (
-    <div className="bg-blue-200  pt-10 mt-6 pb-10">
+    <div className="bg-blue-200  pt-10 pb-10">
         <h1 className="text-center text-4xl py-10 font-extrabold text-blue-950">Ce que nos clients disent de nous</h1>
         
         {/* <div className="flex flex-col items-center gap-y-8"> */}

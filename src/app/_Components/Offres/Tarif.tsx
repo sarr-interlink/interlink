@@ -10,7 +10,7 @@ export const Tarif = ({
     tarificationData: {data: TarificationType},
     pathImg: string }) => {
     return (
-        <div className="flex flex-row items-center justify-center px-64 py-16 bg-gray-200">
+        <div className="flex flex-row items-center justify-center px-64 py-16 bg-gray-300">
             <div className="mr-4">
               <h1 className="text-5xl font-bold font-serif mb-4">
                 {tarificationData.data.attributes.title}
@@ -18,7 +18,7 @@ export const Tarif = ({
 
               <hr className="my-4 border-t border-gray-300" />
 
-              <p className="text-lg mb-4">
+              <p className="text-lg mb-4 font-medium">
                 {tarificationData.data.attributes.description}
                 <br />
                 adaptée à vos exigences
@@ -40,7 +40,7 @@ export const Tarif = ({
                 </Link>
               </div>
 
-              <p className="mt-6 text-left text-gray-700 text-xl font-medium">
+              <p className="mt-6 text-left text-gray-700 text-xl font-bold">
                 {tarificationData.data.attributes.summary}
               </p>
 

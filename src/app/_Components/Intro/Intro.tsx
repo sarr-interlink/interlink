@@ -15,7 +15,7 @@ export function Intro() {
   return (
     
         
-        <div className="bg-black py-[4.5%] flex flex-row items-center justify-center flex-wrap gap-x-4 gap-y-10 relative">
+        <div className="bg-gray-900 py-[4.5%] flex flex-row items-center justify-center flex-wrap gap-x-4 gap-y-10 relative">
           <div className="absolute inset-0">
              <LightRays
               raysOrigin="right"
