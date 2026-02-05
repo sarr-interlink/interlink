@@ -23,6 +23,7 @@ export function OffreClient({
   const offresText = "Nos Offres"
   const modeH = HebergementSaasDesciptionData.data.attributes.title
   const modeHbDescription = HebergementSaasDesciptionData.data.attributes.description
+  
   return (
     <div className=" py-16 bg-white relative">
         <div className="relative z-10">
@@ -62,6 +63,7 @@ export function OffreClient({
 }
 
 const OffreCard = ({hebergement, pathImg, hrefSpecific}: {hebergement: HSaas, pathImg: string, hrefSpecific: string}) => {
+  const title = hebergement.attributes.title
   return (
     
 
@@ -78,13 +80,15 @@ const OffreCard = ({hebergement, pathImg, hrefSpecific}: {hebergement: HSaas, pa
           width={200}
           height={1000}
           />
-          <h3 className="text-2xl font-extrabold text-white">
+          <TypewriterEffectSmooth cursorClassName="hidden"  words={[{text: title, className: "text-3xl font-serif font-extrabold text-white"}]} />
+          {/* <h3 className="text-2xl font-extrabold text-white">
             {hebergement.attributes.title}
-          </h3>
+          </h3> */}
         </CardTitle>
       </CardHeader>
 
       <CardContent className="">
+        
         <p className="text-orange-300 font-bold text-xl text-center">
           {hebergement.attributes.description}
         </p>

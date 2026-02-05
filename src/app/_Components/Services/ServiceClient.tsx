@@ -48,22 +48,22 @@ export function ServiceClient({services}: {services:{data: ServiceType[]}}) {
 const ServiceCard = ({attributes}: {attributes: ServiceTypeAttribute}) => {
 
     return (
-            <BackgroundGradient className="">
+            <BackgroundGradient>
 
-            <Card className="service-card w-70 h-70 md:w-120 md:h-70 ">
+            <Card className="service-card h-75 w-120">
             
             <CardHeader>
                 <CardTitle className="flex flex-row items-center gap-x-6">
                 
                 <i className={`${attributes.iconClass} service-icon text-5xl text-center text-yellow-600 bg-blue-950 p-3 rounded-xl mt-2`}></i>      
                 {/* <h4 className="lg:text-lg md:text-xl font-semibold text-blue-700"> */}
-                    <TypewriterEffectSmooth cursorClassName="hidden" className="text-sm" words={[{text: attributes.title || "No Title",
-                      className: "text-2xl font-bold"}]} />
+                    <TypewriterEffectSmooth cursorClassName="hidden" words={[{text: attributes.title || "No Title",
+                      className: "text-3xl font-extrabold font-serif"}]} />
                 {/* </h4> */}
                 </CardTitle>
             </CardHeader> 
             
-            <CardContent>
+            <CardContent >
                 <p className="text-xl font-bold">
                 {attributes.description || "No Description"}
                 </p>
