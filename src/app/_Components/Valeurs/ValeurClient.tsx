@@ -2,63 +2,46 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ValueAttributeType, ValueType } from "@/src/app/_lib/types/ValuesType";
-import { BackgroundGradient } from "@/src/components/ui/background-gradient";
 
 export function ValuesClient({values}: {values: {data: ValueType[]}}) {
-
-  
   return (
-    <div className="relative overflow-hidden py-4 pb-6 bg-gray-100">
-       
-
-        <div className="relative z-10">
-          
-          <h1 className="text-center text-6xl font-extrabold">Valeurs</h1>
-          <h3 className="text-center text-3xl font-black mt-3">Pourquoi nous choisir</h3>
-          
-          <div className="mt-10 flex flex-row items-center justify-center flex-wrap gap-x-6 gap-y-10">
-            {values &&
-                values.data &&
-                values.data.length > 0 &&
-                values.data.map((value: ValueType) => {
-                  const attributes: ValueAttributeType = value.attributes || {} as ValueAttributeType;
-                  return (
-                    <ValueCard key={attributes.createdAt} attributes={attributes}/>
-                  )
-                })
-              } 
-          </div>
-
+    <section className="py-24 bg-background relative overflow-hidden">
+        <div className="container mx-auto px-6 relative z-10">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+                <h2 className="text-4xl md:text-5xl font-black mb-4">Valeurs</h2>
+                <h3 className="text-2xl md:text-3xl font-bold text-primary">Pourquoi nous choisir</h3>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+                {values?.data?.map((value: ValueType) => {
+                    const attributes: ValueAttributeType = value.attributes || {} as ValueAttributeType;
+                    return (
+                        <ValueCard key={value.id} attributes={attributes}/>
+                    )
+                })}
+            </div>
         </div>
-    </div>
+    </section>
   );
 }
 
-
 const ValueCard = ({attributes}: {attributes: ValueAttributeType}) => {
-  
   return (
-    <BackgroundGradient>
-
-      <Card className="w-120 h-70 bg-neutral-800 text-white">
-        
+    <Card className="group border-border/40 bg-card/60 backdrop-blur-md transition-all duration-500 hover:border-primary/50 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/5">
         <CardHeader>
-          <CardTitle className="flex flex-row items-center gap-5">
-            <i className={`${attributes.iconClass} text-4xl bg-blue-950 text-yellow-500 rounded-md p-3`}></i>
-            {/* <TypewriterEffectSmooth words={[{text: title}]} /> */}
-            <h4 className="">
-              {attributes.title || "No Title"}
-            </h4>
+          <CardTitle className="flex items-center gap-5">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-primary-foreground group-hover:rotate-[360deg] shadow-inner">
+                <i className={`${attributes.iconClass} text-2xl`}></i>
+            </div>
+            <span className="text-xl font-black group-hover:text-primary transition-colors duration-300">{attributes.title || "No Title"}</span>
           </CardTitle>
         </CardHeader>
-
         <CardContent>
-          <p className="text-body-color dark:text-dark-6 font-bold text-xl">
+          <p className="text-muted-foreground font-semibold leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
             {attributes.description || "No Description"}
           </p>
         </CardContent>
-      </Card>
-    </BackgroundGradient>
+        <div className="absolute top-0 right-0 w-16 h-16 bg-primary/5 rounded-bl-[100px] -z-10 group-hover:bg-primary/20 transition-colors duration-500" />
+    </Card>
   )
 }
-

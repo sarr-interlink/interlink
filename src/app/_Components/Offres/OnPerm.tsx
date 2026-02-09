@@ -1,12 +1,11 @@
 "use client"
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { HebergementLocalType } from "../../_lib/types/HebergementLocal";
 import { HebergementLocalDesciptionType } from "../../_lib/types/HebergementLocalDesc";
 import { STRAPI_URL } from "../../_lib/utils";
 import Image from "next/image";
-import { BackgroundGradient } from "@/src/components/ui/background-gradient";
-
+import { ShieldCheck, ArrowRight } from "lucide-react"
 
 export const OnPerm = (
     {HebergementLocaleDesciptionData, hebergementLocale}: 
@@ -15,18 +14,24 @@ export const OnPerm = (
         hebergementLocale: HebergementLocalType[]
     }) => {
     return (
-        <div className="relative bg-stone-100 py-8">
-           
-
-            <div className="relative z-10 py-10">
-                <h1 className="text-4xl font-semibold text-center">
-                {HebergementLocaleDesciptionData.data.attributes.title}
-                </h1>
-                <p className="my-4 text-xl font-medium max-w-3xl mx-auto text-center">
-                {HebergementLocaleDesciptionData.data.attributes.description}
-                </p>
+        <section className="relative bg-[#0A0F1E] py-32 overflow-hidden border-y border-white/5">
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_80%_80%,rgba(59,130,246,0.05),transparent_70%)]" />
             
-                <div className="py-12 flex flex-row items-center justify-center gap-10 px-64">
+            <div className="container mx-auto px-6 relative z-10">
+                <div className="text-center max-w-4xl mx-auto mb-20">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-bold mb-6 uppercase tracking-wider backdrop-blur-sm">
+                        <ShieldCheck className="w-4 h-4" />
+                        Infrastructure Locale
+                    </div>
+                    <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-white mb-8 tracking-tighter">
+                        Mode Local <span className="text-primary italic">"On-Premise"</span>
+                    </h2>
+                    <p className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed max-w-3xl mx-auto">
+                        {HebergementLocaleDesciptionData.data.attributes.description}
+                    </p>
+                </div>
+            
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:px-20">
                     {hebergementLocale.map((hebergement: HebergementLocalType) => {
                         const image = hebergement.attributes.image;
                         const imageUrl = image?.data?.attributes?.url || "";
@@ -36,36 +41,41 @@ export const OnPerm = (
                     })}
                 </div>
             </div>
-        </div>
-        
+        </section>
     )
 }
 
-
 const OnPermCard = ({hebergement, pathImg}: {hebergement: HebergementLocalType, pathImg: string}) => {
     return (
-        <BackgroundGradient className="w-lg h-110">
-
-            <Card className="w-lg h-110 shadow-zinc-600">
-                <CardHeader className="flex flex-col items-center">
-                    <CardTitle>
-
+        <Card className="group relative h-full border-white/10 bg-white/5 backdrop-blur-md transition-all duration-500 hover:border-primary/50 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(59,130,246,0.1)] overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
+            
+            <CardHeader className="flex flex-col items-center pt-10">
+                <div className="mb-8 p-6 rounded-3xl bg-white/[0.03] border border-white/5 shadow-inner transition-all duration-500 group-hover:scale-105 group-hover:bg-white/[0.08]">
                     <Image
-                    src={pathImg}
-                    alt={hebergement.attributes.title}
-                    className=""
-                    width={200}
-                    height={200}
+                        src={pathImg}
+                        alt={hebergement.attributes.title}
+                        width={240}
+                        height={160}
+                        className="object-contain h-32 drop-shadow-[0_0_30px_rgba(255,255,255,0.1)] transition-all duration-500 group-hover:drop-shadow-[0_0_30px_rgba(59,130,246,0.3)]"
                     />
-                    </CardTitle>
+                </div>
+                <CardTitle className="text-2xl md:text-3xl font-black text-white text-center group-hover:text-primary transition-colors">
+                    {hebergement.attributes.title}
+                </CardTitle>
+            </CardHeader>
 
-                    <h2 className="text-xl font-extrabold">{hebergement.attributes.title}</h2>
-                </CardHeader>
-
-                <CardContent>
-                    <p className="text-lg font-medium">{hebergement.attributes.description}</p>
-                </CardContent>
-            </Card>
-        </BackgroundGradient>
+            <CardContent className="pb-12 px-8">
+                <p className="text-slate-400 text-center font-medium leading-relaxed text-lg italic">
+                    {hebergement.attributes.description}
+                </p>
+            </CardContent>
+            
+            <CardFooter className="pb-10 pt-0 flex justify-center">
+                 <div className="flex items-center gap-2 text-primary font-bold opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    Explorer cette solution <ArrowRight className="w-4 h-4" />
+                 </div>
+            </CardFooter>
+        </Card>
     )
 }

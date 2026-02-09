@@ -1,7 +1,9 @@
 "use client"
 import * as React from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { useIsMobile } from "@/hooks/use-mobile"
+import { cn } from "@/lib/utils"
 
 import {
   NavigationMenu,
@@ -14,51 +16,36 @@ import { menuItems, MenuItemType } from "../utils"
 
 export function DesktopNavigation() {
   const isMobile = useIsMobile()
+  const pathname = usePathname()
 
   return (
-
-        <NavigationMenu viewport={isMobile} className="hidden md:block">
-        
-          <NavigationMenuList className="flex-1 flex">
-            {menuItems.map((item: MenuItemType) => {
-                return (
-                    <NavigationItem item={item} key={item.label}/>
-                )
-            })}
-          </NavigationMenuList>
-        
-        </NavigationMenu>
-
+    <NavigationMenu viewport={isMobile} className="hidden md:block">
+      <NavigationMenuList className="flex-1 flex items-center gap-1">
+        {menuItems.map((item: MenuItemType) => {
+            const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href))
+            return (
+                <NavigationItem item={item} key={item.label} isActive={isActive} />
+            )
+        })}
+      </NavigationMenuList>
+    </NavigationMenu>
   )
 }
 
-
-const NavigationItem = ({item}: {item: MenuItemType}) => {
+const NavigationItem = ({item, isActive}: {item: MenuItemType, isActive: boolean}) => {
     return (
-        <NavigationMenuItem className="px-3">
-          <NavigationMenuLink className="text-md font-extrabold text-white " asChild>
+        <NavigationMenuItem>
+          <NavigationMenuLink 
+            asChild
+            className={cn(
+                "text-sm font-bold transition-all duration-300 px-4 py-2 rounded-full",
+                isActive 
+                    ? "text-primary bg-primary/10 shadow-sm" 
+                    : "text-white/80 hover:text-white hover:bg-white/5"
+            )}
+          >
             <Link href={item.href}>{item.label}</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
     )
-}
-
-function ListItem({
-  title,
-  children,
-  href,
-  ...props
-}: React.ComponentPropsWithoutRef<"li"> & { href: string }) {
-  return (
-    <li {...props}>
-      <NavigationMenuLink asChild>
-        <Link href={href}>
-          <div className="text-sm leading-none font-medium">{title}</div>
-          <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
-            {children}
-          </p>
-        </Link>
-      </NavigationMenuLink>
-    </li>
-  )
 }

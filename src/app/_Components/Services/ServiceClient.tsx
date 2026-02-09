@@ -9,69 +9,55 @@ import { BackgroundGradient } from "@/src/components/ui/background-gradient";
 
 export function ServiceClient({services}: {services:{data: ServiceType[]}}) {
     const description = "Nous proposons des solutions innovantes en e-gouvernance, e-santé, développement informatique, messagerie, géolocalisation et cybersécurité."
-//  const services: {data: ServiceType[]} = await getServices();
 
   return (
-    // <StarsBackground>
-
-    <div id="services" className="py-16">
-        <div className="flex flex-row justify-center">
-          <TypewriterEffectSmooth cursorClassName="hidden" className="services-title text-6xl text-center font-extrabold mb-3" words={[{text: "Services"}]} />
-        </div>
-        
-        <TextGenerateEffect 
-        className="text-center font-bold w-3xl mx-auto text-black"
-        words={description}/>
-        
+    <section id="services" className="py-24 bg-background">
+        <div className="container mx-auto px-6">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+                <h2 className="text-4xl md:text-5xl font-black mb-6">
+                    Our <span className="text-primary">Services</span>
+                </h2>
+                <div className="text-lg md:text-xl text-muted-foreground font-medium">
+                    <TextGenerateEffect words={description}/>
+                </div>
+            </div>
             
-        <div  className="services-grid mt-8 mx-auto w-full flex md:flex-wrap flex-col items-center justify-center md:flex-row gap-x-8 gap-y-14">
-          {services &&
-            services.data &&
-            services.data.length > 0 &&
-            services.data.map((service: ServiceType) => {
-              const attributes: ServiceTypeAttribute = service.attributes || {} as ServiceTypeAttribute;
-              // console.log(attributes.iconClass);
-              
-              if (attributes.title !== "Slogan") {
-                return (
-                        <ServiceCard key={service.id} attributes={attributes} />
-                    
-                );
-              }
-            })}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {services?.data?.map((service: ServiceType) => {
+                    const attributes: ServiceTypeAttribute = service.attributes || {} as ServiceTypeAttribute;
+                    if (attributes.title !== "Slogan") {
+                        return <ServiceCard key={service.id} attributes={attributes} />;
+                    }
+                    return null;
+                })}
+            </div>
         </div>
-      </div>
-    // </StarsBackground>
+    </section>
   );
 }
 
 const ServiceCard = ({attributes}: {attributes: ServiceTypeAttribute}) => {
-
     return (
-            <BackgroundGradient className="">
-
-            <Card className="service-card w-70 h-70 md:w-120 md:h-70 ">
+        <Card className="group relative overflow-hidden border-border/40 bg-card/60 backdrop-blur-md transition-all duration-500 hover:border-primary/50 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/5">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             
-            <CardHeader>
-                <CardTitle className="flex flex-row items-center gap-x-6">
-                
-                <i className={`${attributes.iconClass} service-icon text-5xl text-center text-yellow-600 bg-blue-950 p-3 rounded-xl mt-2`}></i>      
-                {/* <h4 className="lg:text-lg md:text-xl font-semibold text-blue-700"> */}
-                    <TypewriterEffectSmooth cursorClassName="hidden" className="text-sm" words={[{text: attributes.title || "No Title",
-                      className: "text-2xl font-bold"}]} />
-                {/* </h4> */}
+            <CardHeader className="relative z-10">
+                <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 shadow-inner">
+                    <i className={`${attributes.iconClass} text-3xl`}></i>
+                </div>
+                <CardTitle className="text-2xl font-black group-hover:text-primary transition-colors duration-300">
+                    {attributes.title || "No Title"}
                 </CardTitle>
             </CardHeader> 
             
-            <CardContent>
-                <p className="text-xl font-bold">
-                {attributes.description || "No Description"}
+            <CardContent className="relative z-10">
+                <p className="text-muted-foreground font-medium leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
+                    {attributes.description || "No Description"}
                 </p>
             </CardContent>
             
-            </Card>
-            </BackgroundGradient>
-    
+            <div className="absolute bottom-0 left-0 w-full h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+        </Card>
   )
 }
 

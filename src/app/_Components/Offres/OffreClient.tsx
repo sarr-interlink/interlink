@@ -3,12 +3,11 @@ import Image from "next/image";
 import { STRAPI_URL } from "@/src/app/_lib/utils";
 import { HSaasDescriptionType } from "../../_lib/types/HSaasDescription";
 import { HSaas, HSaasAttributeImageType } from "../../_lib/types/HSaas";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardFooter, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { TypewriterEffectSmooth } from "@/src/components/ui/typewriter-effect";
 import { TextGenerateEffect } from "@/src/components/ui/text-generate-effect";
-import { BackgroundGradient } from "@/src/components/ui/background-gradient";
+import { CheckCircle2 } from "lucide-react";
 
 export function OffreClient({
     HebergementSaasDesciptionData,  
@@ -23,83 +22,77 @@ export function OffreClient({
   const offresText = "Nos Offres"
   const modeH = HebergementSaasDesciptionData.data.attributes.title
   const modeHbDescription = HebergementSaasDesciptionData.data.attributes.description
+  
   return (
-    <div className=" py-16 bg-white relative">
-        <div className="relative z-10">
-            <div className="flex flex-row justify-center">
-              <TypewriterEffectSmooth cursorClassName="hidden" className="text-center text-5xl font-extrabold text-black" words={[{text: offresText, 
-                className: ""}]}/>
+    <section className="py-32 bg-background relative overflow-hidden">
+        {/* Background Decorative Gradient */}
+        <div className="absolute top-1/4 left-1/4 w-[50%] h-[50%] bg-primary/5 blur-[150px] rounded-full -z-10" />
+        
+        <div className="container mx-auto px-6 relative z-10">
+            <div className="text-center max-w-4xl mx-auto mb-20">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-bold mb-6 uppercase tracking-wider">
+                    <span className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                    </span>
+                    Solutions Cloud
+                </div>
+                <h2 className="text-4xl md:text-5xl lg:text-7xl font-black mb-8 tracking-tighter">
+                    {offresText} <span className="text-primary">{modeH}</span>
+                </h2>
+                <div className="text-lg md:text-xl text-muted-foreground font-medium leading-relaxed max-w-3xl mx-auto">
+                    {modeHbDescription}
+                </div>
             </div>
-            <div className="flex flex-row justify-center">
-              <TypewriterEffectSmooth cursorClassName="hidden" className="text-center font-black mt-4 text-black" words={[{text: modeH, 
-                className: ""}]}/>
-            </div>
-            <TextGenerateEffect className="font-medium text-lg mt-4 text-black max-w-5xl mx-auto"
-            words={modeHbDescription}
-            />
 
-
-            <div className="mt-16 flex flex-row items-center justify-center flex-wrap gap-6">
-
-                {
-                hebergementSaas.map((hebergement: HSaas) => {
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {hebergementSaas.map((hebergement: HSaas) => {
                     const image: HSaasAttributeImageType = hebergement.attributes.image;
                     const imageUrl: string = image?.data?.attributes?.url || "";
                     const pathImg: string = STRAPI_URL + imageUrl
                     return (
-                    <OffreCard hrefSpecific={hrefSpecific} key={hebergement.id} hebergement={hebergement} pathImg={pathImg}/>
+                        <OffreCard hrefSpecific={hrefSpecific} key={hebergement.id} hebergement={hebergement} pathImg={pathImg}/>
                     )
-                })
-                }
-
+                })}
             </div>
         </div>
-
-    </div>
-  
-        
+    </section>
   );
 }
 
 const OffreCard = ({hebergement, pathImg, hrefSpecific}: {hebergement: HSaas, pathImg: string, hrefSpecific: string}) => {
   return (
-    
-
-    <BackgroundGradient>
-
-    <Card className="max-w-lg bg-cyan-800">
-
-      <CardHeader>
-        <CardTitle className="flex flex-col items-center justify-center gap-y-5">
+    <Card className="flex flex-col h-full border-border/40 bg-card/60 backdrop-blur-md transition-all duration-500 hover:border-primary/50 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 group overflow-hidden">
+      <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-[100px] -z-10 group-hover:bg-primary/20 transition-colors" />
+      
+      <CardHeader className="flex-1 pb-4">
+        <div className="mb-8 flex justify-center p-8 rounded-3xl bg-white/5 border border-white/5 shadow-inner transition-all duration-500 group-hover:scale-105 group-hover:bg-white/10">
           <Image
-          src={pathImg}
-          alt={hebergement.attributes.title}
-          className=""
-          width={200}
-          height={1000}
+            src={pathImg}
+            alt={hebergement.attributes.title}
+            width={240}
+            height={160}
+            className="object-contain h-32 drop-shadow-2xl"
           />
-          <h3 className="text-2xl font-extrabold text-white">
+        </div>
+        <CardTitle className="text-2xl font-black text-center mb-4 group-hover:text-primary transition-colors">
             {hebergement.attributes.title}
-          </h3>
         </CardTitle>
+        <CardContent className="px-0">
+            <p className="text-muted-foreground text-center font-medium leading-relaxed mb-6">
+                {hebergement.attributes.description}
+            </p>
+        </CardContent>
       </CardHeader>
 
-      <CardContent className="">
-        <p className="text-orange-300 font-bold text-xl text-center">
-          {hebergement.attributes.description}
-        </p>
-      </CardContent>
-
-      <CardFooter className="flex flex-row justify-center mx-4 mb-6">
-        <Button asChild className="w-full p-6 font-extrabold text-lg bg-blue-950">
-          <Link href={hrefSpecific}>
+      <CardFooter className="pt-4 pb-10 px-10">
+        <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-black py-7 rounded-2xl text-lg shadow-xl shadow-primary/20 transition-all hover:scale-[1.02] active:scale-95 group/btn">
+          <Link href={hrefSpecific} className="flex items-center justify-center gap-2">
             {hebergement.attributes.actionLabel}
+            <CheckCircle2 className="w-5 h-5 opacity-0 group-hover/btn:opacity-100 -translate-x-2 group-hover/btn:translate-x-0 transition-all" />
           </Link>
-          </Button>
+        </Button>
       </CardFooter>
-
     </Card>
-    </BackgroundGradient>
-    
   )
 }

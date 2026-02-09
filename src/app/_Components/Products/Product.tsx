@@ -1,17 +1,10 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// import required modules
-import { Pagination, Navigation, Autoplay, FreeMode} from 'swiper/modules';
-// Import Swiper styles
+import { Pagination, Navigation, Autoplay, FreeMode } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
-
-
-
 
 import { getProducts } from "@/src/app/_lib/data-services";
 import Image from "next/image";
@@ -22,7 +15,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export function ProductsDiv() {
   const [members, setMembers] = useState<{data: ProductType[]}>({data: []});
   const [, setLoading] = useState<boolean>(true);
-  const [, setError] = useState<string>("");
 
   useEffect(() => {
     async function fetchMembers() {
@@ -31,61 +23,52 @@ export function ProductsDiv() {
         setMembers(data);
       } catch (err) {
         console.error("Error fetching members:", err);
-        setError("Failed to load members.");
       } finally {
         setLoading(false);
       }
     }
-
     fetchMembers();
   }, []);
 
- 
-
   const productData = Array.isArray(members.data) ? members.data : [];
 
-  //swiper
-
-
-
   return (
-    <div className="pt-14 pb-10 px-32 bg-gray-100  overflow-hidden relative">
+    <section className="py-24 bg-card/10 relative overflow-hidden">
+        <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-80 h-80 bg-primary/5 blur-[100px] rounded-full -z-10" />
       
-      <div className='relative z-10'>
-        <h1 className="text-center text-5xl font-extrabold  mb-5">Produits</h1>
-                <Swiper
-                slidesPerView={3}
-                spaceBetween={30}
+        <div className="container mx-auto px-6 relative z-10">
+            <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-black mb-4">Nos <span className="text-primary">Produits</span></h2>
+                <p className="text-muted-foreground text-lg font-medium max-w-2xl mx-auto">
+                    Découvrez notre gamme de solutions logicielles conçues pour répondre aux défis d'aujourd'hui.
+                </p>
+            </div>
+
+            <Swiper
+                breakpoints={{
+                    320: { slidesPerView: 1, spaceBetween: 20 },
+                    768: { slidesPerView: 2, spaceBetween: 30 },
+                    1024: { slidesPerView: 3, spaceBetween: 30 }
+                }}
                 freeMode={true}
-                loop={true}
+                loop={productData.length > 3}
                 autoplay={{
-                  delay: 2500,
-                  disableOnInteraction: false,
+                    delay: 3500,
+                    disableOnInteraction: false,
                 }}
-                pagination={{
-                  clickable: true,
-                  
-                }}
+                pagination={{ clickable: true }}
                 navigation={true}
                 modules={[Autoplay, FreeMode, Pagination, Navigation]}
-                className="m-8 w-full"
-                // pagination={{
-                //     type: 'progressbar',
-                // }}
-                // navigation={true}
-                // modules={[Pagination, Navigation]}
-                >
-                {productData.map((product: ProductType) => {
-                    return (
-                        <SwiperSlide className='py-16 px-[3%]' key={product.id}>
-                            <CarouselCard key={product.id} product={product}/>
-                        </SwiperSlide>
-                    )
-                })}
-                </Swiper>        
-
-      </div>
-    </div>
+                className="pb-16"
+            >
+                {productData.map((product: ProductType) => (
+                    <SwiperSlide key={product.id}>
+                        <CarouselCard product={product}/>
+                    </SwiperSlide>
+                ))}
+            </Swiper>        
+        </div>
+    </section>
   );
 }
 
@@ -93,27 +76,26 @@ const CarouselCard = ({product}: {product: ProductType}) => {
     const attributes: ProductAttributeType = product.attributes || {} as ProductAttributeType;
     const logoUrl = attributes.logo?.data?.attributes?.url || "";
     return (
-
-          <Card className="py-8 w-120 h-100 bg-zinc-800 text-white">
-              <CardHeader>
-                  <CardTitle className="flex flex-row items-center gap-x-6">
-                      <Image
-                      alt={attributes.title || "Product Image"}
-                      // loading="lazy"
-                      // fill
-                      width="80"
-                      height="100"
-                      decoding="async"
-                      src={`${STRAPI_URL}${logoUrl}`}
-                      />
-                      <h1 className="text-3xl font-extrabold">{attributes.title}</h1>
-                  </CardTitle>
-              </CardHeader>
-              <CardContent>
-                  <p className="text-lg font-medium line-clamp-7">
-                      {attributes.Description}
-                  </p>
-              </CardContent>
-          </Card>
+        <Card className="h-[400px] flex flex-col border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 transition-all hover:shadow-2xl hover:shadow-primary/5">
+            <CardHeader>
+                <CardTitle className="flex items-center gap-4">
+                    <div className="h-16 w-16 flex-shrink-0 relative bg-white rounded-xl p-2 shadow-sm">
+                        <Image
+                            alt={attributes.title || "Product Logo"}
+                            width={64}
+                            height={64}
+                            className="object-contain w-full h-full"
+                            src={`${STRAPI_URL}${logoUrl}`}
+                        />
+                    </div>
+                    <h3 className="text-xl font-black truncate">{attributes.title}</h3>
+                </CardTitle>
+            </CardHeader>
+            <CardContent>
+                <p className="text-muted-foreground font-medium leading-relaxed line-clamp-6">
+                    {attributes.Description}
+                </p>
+            </CardContent>
+        </Card>
     )
 }

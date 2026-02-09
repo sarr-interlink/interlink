@@ -10,7 +10,6 @@ import LogoLoop from "@/components/LogoLoop";
 export function ReferenceDiv() {
   const [references, setReferences] = useState<{data: ReferenceType[]}>({data:[]});
   const [, setLoading] = useState<boolean>(true);
-  const [, setError] = useState<string>("");
 
   useEffect(() => {
     async function fetchReference() {
@@ -18,71 +17,63 @@ export function ReferenceDiv() {
         const data: {data: ReferenceType[]} = await getReferences();
         setReferences(data);
       } catch (err) {
-        console.error("Error fetching members:", err);
-        setError("Failed to load members.");
+        console.error("Error fetching references:", err);
       } finally {
         setLoading(false);
       }
     }
-
     fetchReference();
   }, []);
 
-  const referencesData =
-    references && Array.isArray(references.data) ? references.data : [];
+  const referencesData = Array.isArray(references.data) ? references.data : [];
+  
   return (
-
-    <div className="">
-      <h1 className="text-center text-5xl font-extrabold pt-8">
-        Références
-      </h1>
-      <LogoH data={swipeData(referencesData)}/>
-    </div>
-
+    <section className="py-24 bg-background">
+        <div className="container mx-auto px-6">
+            <h2 className="text-center text-4xl md:text-5xl font-black mb-16">
+                Nos <span className="text-primary">Références</span>
+            </h2>
+            <LogoH data={swipeData(referencesData)}/>
+        </div>
+    </section>
   );
 }
 
 const LogoH = ({data}: {data: {node: React.ReactNode}[]}) => {
   return (
-     <div 
-     className="py-32 relative overflow-hidden"
-     >
-      {/* Basic horizontal loop */}
+     <div className="relative overflow-hidden py-10">
       <LogoLoop
-        className="h-64 flex flex-col justify-center"
+        className="h-32 flex flex-col justify-center"
         logos={data}
-        speed={40}
+        speed={30}
         direction="left"
-        logoHeight={130}
-        gap={85}
-        hoverSpeed={0}
+        logoHeight={80}
+        gap={100}
+        hoverSpeed={10}
         scaleOnHover
         fadeOut
-        fadeOutColor="#ffffff"
+        fadeOutColor="var(--background)"
         ariaLabel="Technology partners"
       />
       </div>
   )
 }
 
-
 const swipeData = (referencesData: ReferenceType[]) => {
-  const data = referencesData.map((reference: ReferenceType) => {
-                const attributes: ReferenceAttributeType = reference.attributes || {};
-                const logoUrl = attributes.logo?.data?.attributes?.url || "";
-                const ImageComp = 
-                            <Image
-                            width={100} // Specify the width of the image (used as a ratio)
-                            height={10}
-                            className="client-logo w-full h-auto"
-                            src={`${STRAPI_URL}${logoUrl}`}
-                            alt={attributes.Name || "Client logo"}
-                            />
-                        
-                return {node: ImageComp}
-
-  })
-  // console.log(data);
-  
-  return data
+  return referencesData.map((reference: ReferenceType) => {
+    const attributes: ReferenceAttributeType = reference.attributes || {};
+    const logoUrl = attributes.logo?.data?.attributes?.url || "";
+    const ImageComp = (
+        <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100 px-4">
+            <Image
+                width={160}
+                height={60}
+                className="object-contain max-h-16 w-auto"
+                src={`${STRAPI_URL}${logoUrl}`}
+                alt={attributes.Name || "Client logo"}
+            />
+        </div>
+    );
+    return { node: ImageComp };
+  });
 }
