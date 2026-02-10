@@ -36,7 +36,7 @@ export function DesktopNavigation() {
 const NavigationItem = ({item}: {item: MenuItemType}) => {
     return (
         <NavigationMenuItem className="px-3">
-          <NavigationMenuLink className="text-md font-extrabold text-white " asChild>
+          <NavigationMenuLink className="text-md font-extrabold text-black " asChild>
             <Link href={item.href}>{item.label}</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>

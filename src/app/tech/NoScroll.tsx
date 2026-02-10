@@ -24,16 +24,6 @@ export function NoScroll() {
                             <div>
                                 {cntnt.content}
                             </div>
-                            
-                            {/* <div>
-                                <Image
-                                src="https://assets.vercel.com/image/upload/front/nextjs/twitter-card.png"
-                                width={420}
-                                height={420}
-                                className="object-contain p-6"
-                                alt="Next.js framework"
-                                />
-                            </div> */}
                         
                         </div>
                     )
