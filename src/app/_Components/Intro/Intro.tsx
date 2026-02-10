@@ -11,7 +11,7 @@ export function Intro() {
    const subwords = "Propulsez votre entreprise avec des solutions logicielles innovantes et l'intelligence artificielle. Depuis 15 ans, nous concevons le futur digital sur mesure."
    
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#0A0F1E]">
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-white ">
       {/* Background Effects */}
       <div className="absolute inset-0 z-0">
         <LightRays
