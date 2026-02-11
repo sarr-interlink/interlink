@@ -17,7 +17,7 @@ export function NoScroll() {
             {
                 content.map((cntnt: any) => {
                     return (
-                        <div key={cntnt.title} className="flex flex-row justify-center items-center gap-x-32 space-y-64">
+                        <div key={cntnt.title} className="flex flex-row justify-center items-center gap-x-32">
                             
                             <div className="max-w-xl text-2xl text-center font-bold ">{cntnt.description}</div>
                             
