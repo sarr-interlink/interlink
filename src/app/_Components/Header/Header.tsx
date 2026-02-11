@@ -7,16 +7,16 @@ import { Button } from "@/components/ui/button";
 
 export function Header() {
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/60 backdrop-blur-md">
+<header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-white/10 supports-[backdrop-filter]:bg-white/5 border-b border-white/20 transition-all duration-300">
             <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
-                <div className="flex items-center gap-8">
+                <div className="flex items-center gap-6">
                     <Link href="/" className="flex items-center space-x-2">
                         <Image 
                             alt="Interlink Logo" 
                             width={220} 
                             height={60} 
                             src={newlogoInterlink} 
-                            className="transition-opacity hover:opacity-80" 
+                            className="transition-opacity hover:opacity-" 
                             priority
                         />
                     </Link>
@@ -24,12 +24,12 @@ export function Header() {
                         <DesktopNavigation />
                     </nav>
                 </div>
-                <div className="flex items-center gap-4">
+                {/* <div className="flex items-center gap-4">
                     <MobileNavigation />
-                    <Button asChild className="hidden lg:flex bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full px-6">
+                    <Button asChild className="hidden lg:flex border border-blue-500/30 bg-blue-500/10  text-[#0d4c92]  hover:bg-[#0d4c92]  font-bold rounded-full px-6">
                         <Link href="#contact">Contact</Link>
                     </Button>
-                </div>
+                </div> */}
             </div>
         </header>
     )
