@@ -31,7 +31,7 @@ export function ReferenceDiv() {
     <section className="py-24 bg-background">
         <div className="container mx-auto px-6">
             <h2 className="text-center text-4xl md:text-5xl font-black mb-16">
-                Nos <span className="text-primary">Références</span>
+                Nos <span className="text-[#0d4c92]">Références</span>
             </h2>
             <LogoH data={swipeData(referencesData)}/>
         </div>

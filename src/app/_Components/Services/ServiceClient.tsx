@@ -15,9 +15,9 @@ export function ServiceClient({services}: {services:{data: ServiceType[]}}) {
         <div className="container mx-auto px-6">
             <div className="text-center max-w-3xl mx-auto mb-16">
                 <h2 className="text-4xl md:text-5xl font-black mb-6">
-                    Our <span className="text-primary">Services</span>
+                    Our <span className="text-[#0d4c92]">Services</span>
                 </h2>
-                <div className="text-lg md:text-xl text-muted-foreground font-medium">
+                <div className="text-lg text-[#2b619fce] md:text-xl font-medium">
                     <TextGenerateEffect words={description}/>
                 </div>
             </div>
@@ -42,10 +42,10 @@ const ServiceCard = ({attributes}: {attributes: ServiceTypeAttribute}) => {
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             
             <CardHeader className="relative z-10">
-                <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 shadow-inner">
+                <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-all duration-500 group-hover:bg-[#0d4c92] group-hover:text-primary-foreground group-hover:scale-110  shadow-inner">
                     <i className={`${attributes.iconClass} text-3xl`}></i>
                 </div>
-                <CardTitle className="text-2xl font-black group-hover:text-primary transition-colors duration-300">
+                <CardTitle className="text-2xl font-black group-hover:text-[#0d4c92] transition-colors duration-300">
                     {attributes.title || "No Title"}
                 </CardTitle>
             </CardHeader> 
