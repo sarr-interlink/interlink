@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { LucideMapPin, LucideMail, LucidePhone, Send } from "lucide-react";
+import { LucideMapPin, LucideMail, LucidePhone } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { MessageFormContact } from "./MForm";
 
 export function MessageForm() {
   return (
@@ -13,7 +13,7 @@ export function MessageForm() {
             <div className="text-center max-w-2xl mx-auto mb-16">
                 <h2 className="text4xl md:text-5xl font-black mb-4  text-4xl bg-gradient-to-r from-[#3b82f6] to-[#0d4c92] bg-clip-text text-transparent inline-block">Contactez-Nous</h2>
                 <p className="text-[#2b619fce] text-lg font-medium">
-                    Vous avez un projet ou une question ? Notre équipe d'experts est à votre écoute pour vous accompagner.
+                    Vous avez un projet ou une question ? Notre équipe d&apos;experts est à votre écoute pour vous accompagner.
                 </p>
             </div>
 
@@ -21,57 +21,7 @@ export function MessageForm() {
                 {/* Form Card */}
                 <Card className="border-border/50 bg-card/50 backdrop-blur-sm shadow-xl">
                     <CardContent className="pt-8">
-                        <form className="space-y-6">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div className="space-y-2">
-                                    <label htmlFor="name" className="text-sm font-bold ml-1">Nom complet</label>
-                                    <input 
-                                        type="text"
-                                        id="name"
-                                        className="w-full bg-background border border-border/50 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-                                        placeholder="Jean Dupont"
-                                        required
-                                    />
-                                </div>
-                                <div className="space-y-2">
-                                    <label htmlFor="email" className="text-sm font-bold ml-1">Email professionnel</label>
-                                    <input 
-                                        type="email"
-                                        id="email"
-                                        className="w-full bg-background border border-border/50 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-                                        placeholder="contact@entreprise.com"
-                                        required
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="space-y-2">
-                                <label htmlFor="subject" className="text-sm font-bold ml-1">Sujet</label>
-                                <input 
-                                    type="text"
-                                    id="subject"
-                                    className="w-full bg-background border border-border/50 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-                                    placeholder="Comment pouvons-nous vous aider ?"
-                                    required
-                                />
-                            </div>
-
-                            <div className="space-y-2">
-                                <label htmlFor="message" className="text-sm font-bold ml-1">Message</label>
-                                <textarea 
-                                    id="message"
-                                    rows={5}
-                                    className="w-full bg-background border border-border/50 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"
-                                    placeholder="Dites-nous en plus sur votre projet..."
-                                    required
-                                ></textarea>
-                            </div>
-
-                            <Button className="w-full py-7 bg-[#185397d7] hover:bg-[#0d4c92] text-primary-foreground font-black text-lg rounded-xl shadow-lg shadow-primary/20 transition-all hover:scale-[1.02] active:scale-95 group" type="submit">
-                                Envoyer le message
-                                <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                            </Button>
-                        </form>
+                        <MessageFormContact />
                     </CardContent>
                 </Card>
 
@@ -107,7 +57,7 @@ export function MessageForm() {
                     {/* Simple badge or extra info */}
                     <div className="p-8 rounded-3xl bg-primary/5 border border-primary/10">
                         <p className="text-[#0d4c92] font-bold text-lg italic">
-                            "L'expertise technologique au service de votre croissance digitale."
+                            &ldquo;L&apos;expertise technologique au service de votre croissance digitale.&rdquo;
                         </p>
                     </div>
                 </div>
@@ -120,7 +70,7 @@ export function MessageForm() {
 function ContactInfoItem({ icon, title, text, href }: { icon: React.ReactNode, title: string, text: string, href?: string }) {
     return (
         <div className="flex gap-6 items-start group">
-            <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-2xl bg-primary/10 text-primary transition-all group-hover:bg-[#0d4c92] group-hover:text-primary-foreground">
+            <div className="shrink-0 w-14 h-14 flex items-center justify-center rounded-2xl bg-primary/10 text-primary transition-all group-hover:bg-[#0d4c92] group-hover:text-primary-foreground">
                 {icon}
             </div>
             <div className="space-y-1">

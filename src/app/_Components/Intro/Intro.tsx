@@ -11,7 +11,7 @@ export function Intro() {
    const subwords = "Propulsez votre entreprise avec des solutions logicielles innovantes et l'intelligence artificielle. Depuis 15 ans, nous concevons le futur digital sur mesure."
    
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#f8fafc] via-[#f1f5f9] to-[#e2e8f0] py-[4.5%] ">
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-linear-to-br from-[#f8fafc] via-[#f1f5f9] to-[#e2e8f0] py-[4.5%] ">
       {/* Background Effects */}
       <div className="absolute inset-0 z-0">
         <LightRays
@@ -26,17 +26,17 @@ export function Intro() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_70%)]" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className=" container relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Content */}
           <div className="flex-1 max-w-2xl text-center lg:text-left">
-            <div className="inline-flex items-center rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-sm font-medium text-blue-400 mb-6 backdrop-blur-sm">
+            {/* <div className="inline-flex items-center rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-sm font-medium text-blue-400 mb-6 backdrop-blur-sm">
                 Innovation & Expertise
-            </div>
+            </div> */}
             
             <div className="text-slate-800  mb-15 relative z-10 font-sans flex flex-col items-start gap-y-4">
               <TextGenerateEffect
-               className="  tracking-tight text-4xl md:text-6xl leading-tight text-4xl lg:text-5xl *:leading-[1.5] text-[#0d4c92]"
+               className="  tracking-tight text-4xl md:text-6xl leading-tight lg:text-5xl *:leading-normal text-[#0d4c92]"
          
               //  className="text-white text-4xl md:text-6xl  text-white leading-tight"
                 words={word} 
@@ -52,7 +52,7 @@ export function Intro() {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-              <Button asChild size="lg" className="bg-gradient-to-r from-[#3b82f6] to-[#0d4c92]      // ← Dégradé bleu
+              <Button asChild size="lg" className="bg-linear-to-r from-[#3b82f6] to-[#0d4c92]      // ← Dégradé bleu
             hover:from-[#0d4c92] hover:to-[#3b82f6]          // ← Inversion au survol
             text-white
             font-semibold
@@ -98,7 +98,7 @@ export function Intro() {
       </div>
       
       {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-linear-to-t from-background to-transparent" />
     </section>
   );
 }
