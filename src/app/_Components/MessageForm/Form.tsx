@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button"
 import { formHandler } from "@/src/actions/server"
+import { ButtonSubmit } from "./ButtonSubmit"
 
 export const Form = () => {
     return (
@@ -36,9 +36,7 @@ export const Form = () => {
                         data-error="Rédigez votre message !"
                         required></textarea> <br />
 
-                <Button className="py-7 px-9 bg-blue-950 font-black text-lg font-serif" type="submit">
-                  Envoyer
-                </Button>
+                <ButtonSubmit />
 
 
               </form>
