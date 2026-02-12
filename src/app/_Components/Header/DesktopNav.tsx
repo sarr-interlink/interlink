@@ -20,7 +20,7 @@ export function DesktopNavigation() {
 
   return (
     <NavigationMenu viewport={isMobile} className="hidden md:block">
-      <NavigationMenuList className="flex-1 flex items-center gap-1">
+      <NavigationMenuList className="flex-1 flex items-center gap-x-9">
         {menuItems.map((item: MenuItemType) => {
           const isActive =
             pathname === item.href ||
@@ -46,7 +46,7 @@ const NavigationItem = ({
       <NavigationMenuLink
         asChild
         className={cn(
-          "bg-transparent hover:bg-transparent data-[active]:bg-transparent data-[state=open]:bg-transparent",
+          "bg-transparent hover:bg-transparent data-active:bg-transparent data-[state=open]:bg-transparent",
           "relative text-lg font-semibold  transition-colors duration-300 px-3 py-2 ",
           "after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:content-['']",
           isActive
