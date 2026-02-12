@@ -6,7 +6,7 @@ export default function ServicesPage() {
     return (
         <main className="min-h-screen bg-background">
             {/* Hero Section for Services */}
-            <section className="relative pt-32 pb-12 bg-[#0A0F1E] overflow-hidden">
+            <section className="relative pt-32 pb-12  overflow-hidden">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(59,130,246,0.1),transparent_70%)]" />
                 <div className="container mx-auto px-6 relative z-10 text-center">
                     <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight">

@@ -11,8 +11,8 @@ export function MessageForm() {
 
         <div className="container mx-auto px-6">
             <div className="text-center max-w-2xl mx-auto mb-16">
-                <h2 className="text-4xl md:text-5xl font-black mb-4">Contactez-<span className="text-primary">Nous</span></h2>
-                <p className="text-muted-foreground text-lg font-medium">
+                <h2 className="text-4xl md:text-5xl font-black mb-4">Contactez-<span className="text-[#0d4c92]">Nous</span></h2>
+                <p className="text-[#2b619fce] text-lg font-medium">
                     Vous avez un projet ou une question ? Notre équipe d'experts est à votre écoute pour vous accompagner.
                 </p>
             </div>
@@ -67,7 +67,7 @@ export function MessageForm() {
                                 ></textarea>
                             </div>
 
-                            <Button className="w-full py-7 bg-primary hover:bg-primary/90 text-primary-foreground font-black text-lg rounded-xl shadow-lg shadow-primary/20 transition-all hover:scale-[1.02] active:scale-95 group" type="submit">
+                            <Button className="w-full py-7 bg-[#185397d7] hover:bg-[#0d4c92] text-primary-foreground font-black text-lg rounded-xl shadow-lg shadow-primary/20 transition-all hover:scale-[1.02] active:scale-95 group" type="submit">
                                 Envoyer le message
                                 <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                             </Button>
@@ -88,25 +88,25 @@ export function MessageForm() {
                         <ContactInfoItem 
                             icon={<LucideMapPin className="w-6 h-6" />}
                             title="Notre Siège"
-                            text="Abidjan, Côte d'Ivoire"
+                            text="055 Ilot C Zone Château D’Eau Nouakchott – Mauritanie"
                         />
                         <ContactInfoItem 
                             icon={<LucideMail className="w-6 h-6" />}
                             title="Email"
-                            text="contact@interlink.ci"
-                            href="mailto:contact@interlink.ci"
+                            text="info@interlink.mr"
+                            href="mailto:info@interlink.mr"
                         />
                         <ContactInfoItem 
                             icon={<LucidePhone className="w-6 h-6" />}
                             title="Téléphone"
-                            text="+225 00 00 00 00 00"
-                            href="tel:+2250000000000"
+                            text="+ (222) 45 25 23 56"
+                            href="tel:+22245252356"
                         />
                     </div>
 
                     {/* Simple badge or extra info */}
                     <div className="p-8 rounded-3xl bg-primary/5 border border-primary/10">
-                        <p className="text-primary font-bold text-lg italic">
+                        <p className="text-[#0d4c92] font-bold text-lg italic">
                             "L'expertise technologique au service de votre croissance digitale."
                         </p>
                     </div>
@@ -120,7 +120,7 @@ export function MessageForm() {
 function ContactInfoItem({ icon, title, text, href }: { icon: React.ReactNode, title: string, text: string, href?: string }) {
     return (
         <div className="flex gap-6 items-start group">
-            <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-2xl bg-primary/10 text-primary transition-all group-hover:bg-primary group-hover:text-primary-foreground">
+            <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-2xl bg-primary/10 text-primary transition-all group-hover:bg-[#0d4c92] group-hover:text-primary-foreground">
                 {icon}
             </div>
             <div className="space-y-1">

@@ -57,8 +57,8 @@ export function Testimonial() {
 
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-black mb-4">Ce que nos <span className="text-primary">clients</span> disent</h2>
-                    <p className="text-muted-foreground text-lg font-medium max-w-2xl mx-auto">
+                    <h2 className="text-4xl md:text-5xl font-black mb-4">Ce que nos <span className="text-[#0d4c92]">clients</span> disent</h2>
+                    <p className="text-[#2b619fce] text-lg font-medium max-w-2xl mx-auto">
                         La satisfaction de nos partenaires est notre plus grande réussite. Découvrez leurs retours d'expérience.
                     </p>
                 </div>
@@ -120,7 +120,7 @@ const TestimonialCard = ({attributes, logoUrl}: {attributes: TestimonialAttribut
                         className="object-contain p-2"
                     />
                 </div>
-                <h4 className="font-black text-xl text-primary uppercase tracking-tight">
+                <h4 className="font-black text-xl text-[#0d4c92] uppercase tracking-tight">
                   {attributes.Name}
                 </h4>
                 <p className="font-bold text-muted-foreground">

@@ -33,7 +33,7 @@ function Instagram() {
 
 export function Footer() {
   return (
-    <footer className="bg-[#0A0F1E] text-slate-300 border-t border-white/5">
+    <footer className="bg-[#185397d7] text-white border-white/5">
       <div className="container mx-auto px-6 pt-24 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
           {/* Brand Column */}
@@ -46,7 +46,7 @@ export function Footer() {
               alt="Interlink Logo"
               priority
             />
-            <p className="text-slate-400 font-medium leading-relaxed max-w-xs">
+            <p className="text-slate-300 font-medium leading-relaxed max-w-xs">
               VOTRE PARTENAIRE DE DIGITALISATION. Propulsé par l'innovation et l'excellence.
             </p>
             <div className="flex items-center gap-3">
@@ -59,8 +59,9 @@ export function Footer() {
 
           {/* Expertises Column */}
           <div>
+           
             <h4 className="text-white font-bold text-lg mb-6">Expertises</h4>
-            <ul className="space-y-4">
+            <ul className="space-y-4  ">
               <FooterLink href="/">Site Internet</FooterLink>
               <FooterLink href="#">IA générative</FooterLink>
               <FooterLink href="#">Développement Web</FooterLink>
