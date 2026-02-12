@@ -17,20 +17,29 @@ export const Tarif = ({
             <div className="container mx-auto px-6">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-20">
                     <div className="flex-1 max-w-2xl">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-bold mb-8 uppercase tracking-widest">
-                            Tarification Flexible
-                        </div>
-                        
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-[1.1] tracking-tighter text-foreground">
+                        <h2 className="text-4xl bg-gradient-to-r from-[#3b82f6] to-[#0d4c92] bg-clip-text text-transparent inline-block md:text-5xl lg:text-6xl font-black mb-8 leading-[1.1] tracking-tighter text-foreground">
                             {tarificationData.data.attributes.title}
                         </h2>
 
-                        <p className="text-xl text-muted-foreground font-medium leading-relaxed mb-10 max-w-xl">
+                        <p className="text-xl text-[#2b619fce] font-medium leading-relaxed mb-10 max-w-xl">
                             {tarificationData.data.attributes.description}
                         </p>
 
                         <div className="flex flex-wrap items-center gap-8 mb-12">
-                            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-black px-10 py-8 text-xl rounded-2xl shadow-2xl shadow-primary/30 transition-all hover:scale-[1.05] active:scale-95 group">
+                            <Button asChild size="lg" className="bg-gradient-to-r from-[#3b82f6] to-[#0d4c92]      // ← Dégradé bleu
+            hover:from-[#0d4c92] hover:to-[#3b82f6]          // ← Inversion au survol
+            text-white
+            font-semibold
+            px-10 py-6                                        // ← Padding augmenté
+            text-2xl
+            rounded-xl
+            shadow-lg                                         // ← Ombre plus prononcée
+            hover:shadow-xl                                   // ← Ombre augmentée au survol
+            hover:scale-105                                   // ← Légère mise à l'échelle
+            transition-all duration-300                       // ← Animation fluide
+            border-0                                          // ← Retrait de bordure
+            group                                             // ← Pour effets enfants
+            relative overflow-hidden">
                                 <Link href="/contact" className="flex items-center gap-2">
                                     {tarificationData.data.attributes.actionLabel}
                                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

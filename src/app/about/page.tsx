@@ -37,12 +37,12 @@ export default async function Page() {
         </div>
 
         {/* Text Content */}
-        <div className="relative max-w-7xl mx-auto h-full flex items-center z-10">
-          <div className="col-span-12 lg:col-span-6 space-y-4 sm:space-y-6 px-6 text-left">
-            <h1 className="title-font text-white mb-4 text-xl font-bold leading-10 tracking-tight sm:text-5xl">
+        <div className="relative max-w-7xl mx-auto h-full flex items-center  z-10">
+          <div className="col-span-12 lg:col-span-6 space-y-4 sm:space-y-6 px-7 text-left">
+            <h1 className="title-font text-white mb-4 text-xl font-bold leading-10 tracking-tight sm:text-5xl ">
               Interlink
             </h1>
-            <p className="text-white">{about?.attributes.slogan}</p>
+            <p className="text-white ">{about?.attributes.slogan}</p>
           </div>
         </div>
       </section>
@@ -53,7 +53,7 @@ export default async function Page() {
         <div className="flex flex-col lg:flex-row">
           {/* Left column with text */}
           <div className="lg:w-1/2">
-            <h2 className="title-font text-primary mb-4 text-xl font-bold leading-10 tracking-tight sm:text-5xl">
+            <h2 className="title-font bg-gradient-to-r from-[#3b82f6] to-[#0d4c92] bg-clip-text text-transparent inline-block mb-4 text-xl font-bold leading-10 tracking-tight sm:text-5xl">
               Notre histoire
             </h2>
 
@@ -208,7 +208,7 @@ export default async function Page() {
       </section>
 
       <section className="mx-auto mb-32 max-w-7xl">
-        <h2 className="title-font text-primary mb-4 text-xl font-bold leading-10 tracking-tight sm:text-5xl text-center">
+        <h2 className="title-font bg-gradient-to-r from-[#3b82f6] to-[#0d4c92] bg-clip-text text-transparent inline-block mb-4 text-xl font-bold leading-10 tracking-tight sm:text-5xl text-center">
           Nos chiffres clés
         </h2>
         <div className="space-y-12">
@@ -323,7 +323,7 @@ export default async function Page() {
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div className="mx-auto mb-12 max-w-200 text-center lg:mb-20">
-              <h1 className="title-font text-primary mb-4 text-xl font-bold leading-10 tracking-tight sm:text-5xl">
+              <h1 className="title-font bg-gradient-to-r from-[#3b82f6] to-[#0d4c92] bg-clip-text text-transparent inline-block mb-4 text-xl font-bold leading-10 tracking-tight sm:text-5xl">
                 Nos métiers
               </h1>
             </div>
@@ -336,12 +336,12 @@ export default async function Page() {
               <TabsTrigger
                 key={work.id}
                 value={work.attributes.title}
-                className="p-6 bg-gray-200 data-[state=active]:bg-blue-950 data-[state=active]:text-white shadow min-h-25 px-5"
+                className="p-6 bg-blue-50 data-[state=active]:bg-[#0d4b92dc] data-[state=active]:text-white shadow min-h-25 px-5"
               >
                 <div className="flex flex-row justify-between items-center gap-x-3">
                   <div className="bg-white p-2 rounded-lg">
                     <i
-                      className={`ri-heart-pulse-line text-blue-600 text-6xl`}
+                      className={`ri-heart-pulse-line text-[#3784dde5] text-6xl`}
                     ></i>
                   </div>
                   <p className="text-lg font-bold text-wrap">

@@ -37,8 +37,8 @@ export function OffreClient({
                     </span>
                     Solutions Cloud
                 </div>
-                <h2 className="text-4xl md:text-5xl lg:text-7xl font-black mb-8 tracking-tighter">
-                    {offresText} <span className="text-[#0d4c92]">{modeH}</span>
+                <h2 className="text-4xl md:text-5xl lg:text-3.2xl font-black text-[#3b82f6] mb-6 ">
+                    {offresText} <span className=" text-4xl md:text-5xl font-black mb-6  text-4xl  bg-gradient-to-r from-[#3b82f6] to-[#0d4c92] bg-clip-text text-transparent inline-block">{modeH}</span>
                 </h2>
                 <div className="text-lg text-[#2b619fce] md:text-xl font-medium leading-relaxed max-w-3xl mx-auto">
                     {modeHbDescription}

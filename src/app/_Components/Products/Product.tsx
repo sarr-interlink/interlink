@@ -41,8 +41,8 @@ export function ProductsDiv() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black mb-4">
-            Nos <span className="text-[#0d4c92]">Produits</span>
+          <h2 className="text-4xl md:text-5xl font-black mb-6  text-4xl  bg-gradient-to-r from-[#3b82f6] to-[#0d4c92] bg-clip-text text-transparent inline-block">
+            Nos Produits
           </h2>
           <p className=" text-[#2b619fce] text-lg font-medium max-w-2xl mx-auto">
             Découvrez notre gamme de solutions logicielles conçues pour répondre

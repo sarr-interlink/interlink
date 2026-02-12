@@ -57,7 +57,7 @@ export function Testimonial() {
 
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-black mb-4">Ce que nos <span className="text-[#0d4c92]">clients</span> disent</h2>
+                    <h2 className="text-4xl md:text-5xl font-black mb-4">Ce que nos <span className="text4xl md:text-5xl font-black mb-4  text-4xl   bg-gradient-to-r from-[#3b82f6] to-[#0d4c92] bg-clip-text text-transparent inline-block">clients</span> disent</h2>
                     <p className="text-[#2b619fce] text-lg font-medium max-w-2xl mx-auto">
                         La satisfaction de nos partenaires est notre plus grande réussite. Découvrez leurs retours d'expérience.
                     </p>

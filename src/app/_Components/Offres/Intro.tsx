@@ -8,9 +8,10 @@ export const OffreIntro  = ({
     pathImg: string
 }
 ) => {
+    console.log("IMAGE URL:", pathImg);
     return (
-        <section className="relative py-24 bg-[#0A0F1E] overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(59,130,246,0.1),transparent_70%)]" />
+        <section className="relative py-24 absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(59,130,246,0.15),transparent_80%)] overflow-hidden">
+            <div className="absolute inset-0 bg-white" />
             
             <div className="container mx-auto px-6 relative z-10">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
@@ -19,25 +20,26 @@ export const OffreIntro  = ({
                             <span className="flex h-2 w-2 rounded-full bg-blue-500 animate-pulse" />
                             Solutions d'Hébergement
                         </div>
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1] mb-8 tracking-tighter">
+                        <h1 className="text-4xl md:text-5xl lg:text-4xl font-black  leading-[1] mb-8 tracking-tighter  bg-gradient-to-r from-[#3b82f6] to-[#0d4c92] bg-clip-text text-transparent inline-block">
                             {hebergement.attributes.title}
                         </h1>
-                        <p className="text-xl md:text-2xl text-slate-400 font-medium leading-relaxed max-w-xl italic">
+                        <p className="text-xl md:text-2xl text-[#2b619fce] font-medium leading-relaxed max-w-xl italic">
                             {hebergement.attributes.description}
                         </p>
                     </div>
 
-                    <div className="flex-1 flex justify-center lg:justify-end">
+                    <div className="flex-1 flex  justify-center lg:justify-end">
                         <div className="relative">
+                            
                             <Image
                                 alt="Hébergement Visual"
                                 width={520}
                                 height={400}
-                                className="object-contain drop-shadow-[0_0_50px_rgba(59,130,246,0.2)] animate-float"
+                                className="object-contain bg-white animate-float"
                                 src={pathImg}
                                 priority
                             />
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-500/10 blur-[100px] rounded-full -z-10" />
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  bg-blue-500/10 blur-[100px] rounded-full -z-10" />
                         </div>
                     </div>
                 </div>

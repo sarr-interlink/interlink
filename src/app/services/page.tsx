@@ -7,12 +7,19 @@ export default function ServicesPage() {
         <main className="min-h-screen bg-background">
             {/* Hero Section for Services */}
             <section className="relative pt-32 pb-12  overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(59,130,246,0.1),transparent_70%)]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(59,130,246,0.15),transparent_80%)]" />
                 <div className="container mx-auto px-6 relative z-10 text-center">
-                    <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight">
-                        Nos <span className="text-primary italic">Expertises</span>
-                    </h1>
-                    <p className="text-xl text-slate-400 max-w-2xl mx-auto font-medium">
+                    <h1
+  className="
+    text-3xl md:text-6xl font-black mb-6
+    bg-gradient-to-r from-[#3b82f6] to-[#0d4c92]
+    bg-clip-text text-transparent inline-block
+  "
+>
+  Nos Expertises
+</h1>
+
+                    <p className="text-xl text-[#2b619fce] max-w-2xl mx-auto font-medium">
                         Des solutions sur mesure pour propulser votre transformation digitale vers de nouveaux sommets.
                     </p>
                 </div>

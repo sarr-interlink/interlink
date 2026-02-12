@@ -14,17 +14,14 @@ export default async function Products() {
   return (
     <main className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 bg-[#0A0F1E] overflow-hidden border-b border-white/5">
+        <section className="relative pt-32 pb-20 bg-whiteoverflow-hidden border-b border-white/5">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_70%)]" />
             <div className="container mx-auto px-6 relative z-10 text-center">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-bold mb-8 uppercase tracking-widest">
-                    <Sparkles className="w-4 h-4" />
-                    Solutions Innovantes
-                </div>
-                <h1 className="text-5xl md:text-7xl font-black text-white mb-8 tracking-tighter">
-                   Nos <span className="text-primary italic">Produits</span>
+              
+                <h1 className="text-5xl md:text-7xl font-black bg-gradient-to-r from-[#3b82f6] to-[#0d4c92] bg-clip-text text-transparent inline-block mb-8 tracking-tighter">
+                   Nos Produits
                 </h1>
-                <p className="text-xl text-slate-400 max-w-2xl mx-auto font-medium leading-relaxed">
+                <p className="text-xl text-[#2b619fce] max-w-2xl mx-auto font-medium leading-relaxed">
                     Optimisez votre performance avec notre expertise sectorielle et des outils conçus pour l'avenir de votre entreprise.
                 </p>
             </div>
@@ -78,22 +75,22 @@ const ProductCard = ({title, description, productId, pathImg}: {title: string, d
                         className="object-contain h-24 w-24 drop-shadow-2xl transition-transform duration-500"
                     />
                 </div>
-                <CardTitle className="text-2xl font-black text-center group-hover:text-primary transition-colors duration-300">
+                <CardTitle className="text-2xl font-black text-center group-hover:text-[#0d4c92] transition-colors duration-300">
                     {title}
                 </CardTitle>
             </CardHeader>
 
             <CardContent className="flex-grow">
-                <p className="text-muted-foreground text-center font-medium leading-relaxed line-clamp-3">
+                <p className="text-muted-foreground group-hover:text-[#2b619fce] text-center font-medium leading-relaxed line-clamp-3">
                     {description}
                 </p>
             </CardContent>
             
             <CardFooter className="pb-10 pt-6 px-10">
-                <Button asChild variant="outline" className="w-full border-primary/20 hover:bg-primary hover:text-primary-foreground font-black py-7 rounded-2xl text-lg transition-all group/btn shadow-sm hover:shadow-lg hover:shadow-primary/20">
+                <Button asChild variant="outline" className="w-full border-primary/20 hover:bg-[#0d4687cf] hover:text-primary-foreground font-black py-7 rounded-2xl text-lg transition-all group/btn shadow-sm hover:shadow-lg hover:shadow-primary/20">
                     <Link href={`/products/${productId}`} className="flex items-center justify-center gap-2">
                         Plus d'infos
-                        <ArrowRight className="w-5 h-5 transition-transform group-hover/btn:translate-x-1" />
+                        <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                     </Link>
                 </Button>
             </CardFooter>
