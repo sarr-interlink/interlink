@@ -1,6 +1,10 @@
+"use client"
+
+import { Button } from "@/components/ui/button";
 import logoInterlink from "@/public/assets/img/InterlinkLogofinal/2.svg";
 import Image from "next/image";
 import Link from "next/link";
+import { ButtonUp } from "./ButtonUp";
 
 function Facebook() {
   return (
@@ -86,8 +90,8 @@ export function Footer() {
               priority
             />
             <p className="text-white/70 font-medium leading-relaxed max-w-xs">
-              VOTRE PARTENAIRE DE DIGITALISATION. Propulsé par l'innovation et
-              l'excellence.
+              VOTRE PARTENAIRE DE DIGITALISATION. Propulsé par l&apos;innovation et
+              l&apos;excellence.
             </p>
             <div className="flex items-center gap-3">
               <SocialLink href="#" icon={<Facebook />} label="Facebook" />
@@ -124,9 +128,9 @@ export function Footer() {
           <div>
             <h4 className="text-white font-bold text-lg mb-6">Contact</h4>
             <address className="not-italic space-y-4 text-white/70 font-medium">
-              <p>Abidjan, Côte d'Ivoire</p>
-              <p>contact@interlink.ci</p>
-              <p>+225 00 00 00 00 00</p>
+              <p>055 Ilot C Zone Château D’Eau Nouakchott – Mauritanie</p>
+              <p>info@interlink.mr</p>
+              <p>+(222) 45 25 23 56</p>
             </address>
           </div>
         </div>
@@ -148,12 +152,14 @@ export function Footer() {
       </div>
 
       {/* Go to Top */}
-      <Link
+      {/* <Link
         href="#"
         className="fixed bottom-8 right-8 h-12 w-12 flex items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/20 transition-all hover:scale-110 hover:shadow-primary/40 active:scale-95 z-50"
       >
         <i className="lni lni-arrow-up text-xl"></i>
-      </Link>
+      </Link> */}
+
+      <ButtonUp />
     </footer>
   );
 }

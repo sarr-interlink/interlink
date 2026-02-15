@@ -18,7 +18,7 @@ export const OffreIntro  = ({
                     <div className="flex-1 max-w-2xl">
                         <div className="inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-1.5 text-sm font-bold text-blue-400 mb-8 backdrop-blur-sm uppercase tracking-widest">
                             <span className="flex h-2 w-2 rounded-full bg-blue-500 animate-pulse" />
-                            Solutions d'Hébergement
+                            Solutions d&apos;Hébergement
                         </div>
                         <h1 className="text-4xl md:text-5xl lg:text-4xl font-black  leading-[1] mb-8 tracking-tighter  bg-gradient-to-r from-[#3b82f6] to-[#0d4c92] bg-clip-text text-transparent inline-block">
                             {hebergement.attributes.title}
