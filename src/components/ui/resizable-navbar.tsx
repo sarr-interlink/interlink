@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import newlogoInterlink from "@/public/4.svg"
+import newlogoInterlink from "@/public/4.svg";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import {
   motion,
@@ -9,10 +9,9 @@ import {
   useScroll,
   useMotionValueEvent,
 } from "motion/react";
-
+import { usePathname } from "next/navigation";
 import React, { useRef, useState } from "react";
 import Link from "next/link";
-
 
 interface NavbarProps {
   children: React.ReactNode;
@@ -105,8 +104,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
       style={{
         minWidth: "1300px",
       }}
-      
-       className={cn(
+      className={cn(
         "relative z-60 mx-auto max-w-6xl self-start hidden w-full flex-row items-center justify-between  rounded-full bg-transparent px-4 py-2 lg:flex dark:bg-transparent",
         visible && "bg-white/80 dark:bg-neutral-950/80",
         className,
@@ -119,7 +117,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
 
 export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
-
+  const pathname = usePathname();
   return (
     <motion.div
       onMouseLeave={() => setHovered(null)}
@@ -128,23 +126,36 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
         className,
       )}
     >
-      {items.map((item, idx) => (
-        <Link
-          onMouseEnter={() => setHovered(idx)}
-          onClick={onItemClick}
-          className="mr-5 relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
-          key={`link-${idx}`}
-          href={item.link}
-        >
-          {hovered === idx && (
-            <motion.div
-              layoutId="hovered"
-              className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
-            />
-          )}
-          <span className="relative z-20 font-extrabold text-black">{item.name}</span>
-        </Link>
-      ))}
+      {items.map((item, idx) => {
+        const isActive = pathname === item.link;
+        return (
+          <Link
+            onMouseEnter={() => setHovered(idx)}
+            onClick={onItemClick}
+            className={cn(
+              "mr-5 relative  text-lg font-semibold px-4 py-2 transition-colors duration-300 px-3 py-2",
+              "after:absolute after:left-0 after:-bottom-1 after:h-1 after:w-0 after:bg-current after:transition-all after:duration-300 after:content-['']",
+              isActive
+                ? "text-[#0d4c92] after:w-full font-bold px-3 py-2 text-lg md:text-xl"
+                : "text-[#0d4c92]  hover:after:w-full",
+            )}
+            //  className={cn("bg-transparent hover:bg-transparent data-active:bg-transparent data-[state=open]:bg-transparent",
+            //           "relative text-lg font-semibold  transition-colors duration-300 px-3 py-2 ",
+            //           "after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:content-['']",
+            //           isActive
+            //             ? "text-[#0B1F3B]  after:w-full hover:bg-white/10 font-bold px-3 py-2 text-lg md:text-xl backdrop-blur-lg border border-white/50 hover:border-white/10"
+            //             : "hover:shadow-xl relative   text-[#0d4c92] hover:after:w-full ",
+            //         )}
+
+            key={`link-${idx}`}
+            href={item.link}
+          >
+            <span className="relative z-20 font-extrabold text-black">
+              {item.name}
+            </span>
+          </Link>
+        );
+      })}
     </motion.div>
   );
 };
@@ -240,13 +251,13 @@ export const NavbarLogo = () => {
       href="/"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
-      <Image 
-      alt="Interlink Logo" 
-      width={220} 
-      height={60} 
-      src={newlogoInterlink} 
-      className="transition-opacity hover:opacity-" 
-      priority
+      <Image
+        alt="Interlink Logo"
+        width={220}
+        height={60}
+        src={newlogoInterlink}
+        className="transition-opacity hover:opacity-"
+        priority
       />
     </Link>
   );
