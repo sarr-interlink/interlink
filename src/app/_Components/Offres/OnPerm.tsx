@@ -41,6 +41,9 @@ export const OnPerm = (
                     })}
                 </div>
             </div>
+            <div className="absolute bottom-0 left-0 w-full h-20 bg-linear-to-t from-background to-transparent" />
+            <div className="absolute top-0 left-0 w-full h-20 bg-linear-to-b from-background to-transparent" />
+                 
         </section>
     )
 }

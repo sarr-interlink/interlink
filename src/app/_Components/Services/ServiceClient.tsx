@@ -32,6 +32,7 @@ export function ServiceClient({services}: {services:{data: ServiceType[]}}) {
                 })}
             </div>
         </div>
+        
     </section>
   );
 }

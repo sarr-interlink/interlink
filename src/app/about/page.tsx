@@ -45,6 +45,7 @@ export default async function Page() {
             <p className="text-white ">{about?.attributes.slogan}</p>
           </div>
         </div>
+        
       </section>
 
       {/* <About Works={works} /> */}
