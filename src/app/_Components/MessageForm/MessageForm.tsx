@@ -11,7 +11,7 @@ export function MessageForm() {
 
         <div className="container mx-auto px-6">
             <div className="text-center max-w-2xl mx-auto mb-16">
-                <h2 className="text-4xl md:text-5xl font-black mb-4">Contactez-<span className="text-[#0d4c92]">Nous</span></h2>
+                <h2 className="text4xl md:text-5xl font-black mb-4  text-4xl bg-gradient-to-r from-[#3b82f6] to-[#0d4c92] bg-clip-text text-transparent inline-block">Contactez-Nous</h2>
                 <p className="text-[#2b619fce] text-lg font-medium">
                     Vous avez un projet ou une question ? Notre équipe d&apos;experts est à votre écoute pour vous accompagner.
                 </p>

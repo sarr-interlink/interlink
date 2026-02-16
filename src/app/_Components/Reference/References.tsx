@@ -30,9 +30,8 @@ export function ReferenceDiv() {
   return (
     <section className="py-24 bg-background">
         <div className="container mx-auto px-6">
-            <h2 className="text-center text-4xl md:text-5xl font-black mb-16">
-                Nos <span className="text-[#0d4c92]">Références</span>
-            </h2>
+            <h1 className="text-center text4xl md:text-5xl font-black mb-4  text-4xl  bg-gradient-to-r from-[#3b82f6] to-[#0d4c92] bg-clip-text text-transparent inline-block">Nos Références
+            </h1>
             <LogoH data={swipeData(referencesData)}/>
         </div>
     </section>

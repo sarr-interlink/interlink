@@ -10,8 +10,8 @@ export const Methodologie = () => {
         <section className="py-24 bg-background relative overflow-hidden">
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center max-w-3xl mx-auto mb-20">
-                    <h2 className="text-4xl md:text-5xl font-black mb-6">Notre <span className="text-primary">Méthodologie</span></h2>
-                    <p className="text-muted-foreground text-lg font-medium leading-relaxed">
+                    <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-[#0d4c92] to-[#3b82f6] bg-clip-text text-transparent inline-block">Notre Méthodologie</h2>
+                    <p className=" text-[#2b619fce] text-lg font-medium leading-relaxed">
                         Un processus structuré et agile pour transformer vos idées en solutions concrètes et performantes.
                     </p>
                 </div>
@@ -22,7 +22,7 @@ export const Methodologie = () => {
                             <TabsTrigger 
                                 key={index} 
                                 value={value}
-                                className="px-8 py-4 rounded-2xl border border-border/40 bg-card/40 backdrop-blur-sm data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg data-[state=active]:shadow-primary/20 transition-all font-bold text-sm md:text-base hover:bg-card/60"
+                                className="px-8 py-4 rounded-2xl border border-border/40 bg-card/40 backdrop-blur-sm data-[state=active]:bg-[#0d4c92] data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg data-[state=active]:shadow-primary/20 transition-all font-bold text-sm md:text-base hover:bg-card/60"
                             >
                                 {index + 1}. {title.split(' ')[0]} {title.split(' ')[1] || ""}
                             </TabsTrigger>
@@ -36,7 +36,7 @@ export const Methodologie = () => {
                                     <div className="grid grid-cols-1 lg:grid-cols-2">
                                         <div className="p-8 md:p-12 lg:p-16 space-y-8">
                                             <div className="space-y-4">
-                                                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-primary-foreground font-black text-xl shadow-lg shadow-primary/20">
+                                                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#2b619fce] text-primary-foreground font-black text-xl shadow-lg shadow-primary/20">
                                                     0{index + 1}
                                                 </div>
                                                 <h3 className="text-3xl md:text-4xl font-black">{tabContent.title}</h3>

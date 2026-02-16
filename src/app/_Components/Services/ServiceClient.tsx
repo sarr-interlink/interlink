@@ -14,10 +14,10 @@ export function ServiceClient({services}: {services:{data: ServiceType[]}}) {
     <section id="services" className="py-24 bg-background">
         <div className="container mx-auto px-6">
             <div className="text-center max-w-3xl mx-auto mb-16">
-                <h2 className="text-4xl md:text-5xl font-black mb-6">
-                    Our <span className="text-[#0d4c92]">Services</span>
+                <h2 className="text-4xl md:text-5xl font-black mb-6  bg-gradient-to-r from-[#3b82f6] to-[#0d4c92] bg-clip-text text-transparent inline-block">
+                    Nos Services
                 </h2>
-                <div className="text-lg text-[#2b619fce] md:text-xl font-medium">
+                <div className="text-lg text-[#2b619fce]  font-medium  leading-relaxed max-w-3xl mx-auto">
                     <TextGenerateEffect words={description}/>
                 </div>
             </div>

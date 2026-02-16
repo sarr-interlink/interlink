@@ -8,8 +8,8 @@ export function ValuesClient({values}: {values: {data: ValueType[]}}) {
     <section className="py-24relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-16">
-                <h2 className="text-4xl md:text-5xl font-black mb-4">Valeurs</h2>
-                <h3 className="text-2xl md:text-3xl font-bold text-[#0d4c92]">Pourquoi nous choisir</h3>
+                <h2 className="text-4xl md:text-5xl font-black mb-4  text-4xl  bg-gradient-to-r from-[#3b82f6] to-[#0d4c92] bg-clip-text text-transparent inline-block">Valeurs</h2>
+                <h3 className="text-2xl md:text-3xl font-bold text-[#2b619fce]">Pourquoi nous choisir</h3>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
