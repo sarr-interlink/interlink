@@ -93,7 +93,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         boxShadow: visible
           ? "0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset"
           : "none",
-        width: visible ? "60%" : "100%",
+        width: visible ? "70%" : "100%",
         y: visible ? 20 : 0,
       }}
       transition={{
@@ -117,13 +117,13 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
 };
 
 export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
-  const [hovered, setHovered] = useState<number | null>(null);
+  const [, setHovered] = useState<number | null>(null);
   const pathname = usePathname();
   return (
     <motion.div
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "mr-15 absolute inset-0 hidden flex-1 flex-row items-center justify-end space-x-2 text-sm font-medium text-zinc-600 transition duration-200 hover:text-zinc-800 lg:flex lg:space-x-2",
+        "mr-15  absolute inset-0 hidden flex-1 flex-row items-center justify-end space-x-2 text-sm font-medium text-zinc-600 transition duration-200 hover:text-zinc-800 lg:flex lg:space-x-2",
         className,
       )}
     >
@@ -134,7 +134,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
             onMouseEnter={() => setHovered(idx)}
             onClick={onItemClick}
             className={cn(
-              "mr-5 relative  text-lg font-semibold px-4 py-2 transition-colors duration-300 px-3 py-2",
+              "mr-5 relative  text-lg font-semibold px-4 py-2 transition-colors duration-300",
               "after:absolute after:left-0 after:-bottom-1 after:h-1 after:w-0 after:bg-current after:transition-all after:duration-300 after:content-['']",
               isActive
                 ? "text-[#0d4c92] after:w-full font-bold px-3 py-2 text-lg md:text-xl"
@@ -151,7 +151,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
             key={`link-${idx}`}
             href={item.link}
           >
-            <span className="relative z-20 font-extrabold text-black">
+            <span className="relative z-20 font-extrabold text-[#0d4c92]">
               {item.name}
             </span>
           </Link>
